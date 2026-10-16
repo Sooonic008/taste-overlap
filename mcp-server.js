@@ -70,10 +70,18 @@ process.stdin.on("data", (chunk) => {
     if (!line) continue;
     let msg;
     try { msg = JSON.parse(line); } catch { reply({ id: null, error: { code: -32700, message: "parse error" } }); continue; }
+    if (!msg || typeof msg !== "object" || Array.isArray(msg)) {      // null, numbers, batches: not supported, never fatal
+      reply({ id: null, error: { code: -32600, message: "invalid request (expected one JSON-RPC object per line)" } });
+      continue;
+    }
+    pending += 1;
     handle(msg).then(
       (result) => { if (msg.id !== undefined && result !== undefined) reply({ id: msg.id, result }); },
       (err) => { if (msg.id !== undefined) reply({ id: msg.id, error: { code: err.code ?? -32603, message: err.message } }); },
-    );
+    ).catch(() => {}).finally(() => { pending -= 1; if (closed && !pending) process.exit(0); });
   }
 });
-process.stdin.on("end", () => process.exit(0));
+// stdin closed: answer what is still running (a plan takes seconds), then exit - the qloo child goes with the process.
+let pending = 0, closed = false;
+process.stdin.on("end", () => { closed = true; if (!pending) process.exit(0); });
+process.on("unhandledRejection", () => {});    // a last net: one bad request must never end the session
