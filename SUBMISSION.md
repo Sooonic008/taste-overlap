@@ -69,12 +69,12 @@ export QLOO_API_KEY=...
 export QLOO_BASE_URL=https://hackathon.api.qloo.com
 export QLOO_TRUSTED_BASE_URL=https://hackathon.api.qloo.com
 npm start
-node --test   # 32 tests
+node --test   # 38 tests
 ```
 
 ## Limitations
 
-- **Ambiguous names:** the client takes Qloo's top-ranked candidate. For example, "Wes Anderson" resolved to the author entity rather than a film. The choice is returned so a UI can let the user correct it, but this version does not offer that correction yet.
+- **Ambiguous names:** the client takes Qloo's top-ranked candidate, skipping albums when another type is offered ("Harry Potter" otherwise resolved to an album and had no influence). For example, "Wes Anderson" resolved to the author entity rather than a film. The choice is returned so a UI can let the user correct it, but this version does not offer that correction yet.
 - **Places only:** the evening order is a keyword heuristic on Qloo's short description, not opening hours or distance.
 - **Speed:** with `qloo exec` (a new process per call), a full plan took 12.8 s and 14.6 s locally and timed out on the free host. Over `qloo mcp` it took 2.9 s to 7.3 s locally once the process was running; the first plan after a start took 15.4 s.
 - **Overlap coverage:** when the two personal top-20 lists share fewer than six places, the remaining picks are Qloo's choices for the combined taste and are labelled that way.
