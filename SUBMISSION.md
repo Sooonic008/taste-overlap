@@ -17,6 +17,10 @@ All calls go through the official event surfaces of `@qloo/qloo-harness` 0.1.26 
 
 The result depends entirely on Qloo's per-person affinities. No language model chooses or ranks a place.
 
+## As an agent tool
+
+`mcp-server.js` exposes the whole plan as one MCP tool, `plan_shared_evening`, so an assistant can call it when a user asks something like "where should my partner and I go tonight in Berlin?". Live test on 16 Oct 2026 from an MCP client: Berlin, Daft Punk + Christopher Nolan vs Adele + Pixar, 6 places in 12.3 s, all labelled combined (the personal lists did not overlap).
+
 ## Redacted request and result (live, 16 Oct 2026)
 
 Request (`qloo exec recommend`, stdin; the key is in the environment and never in the payload):
@@ -69,7 +73,7 @@ export QLOO_API_KEY=...
 export QLOO_BASE_URL=https://hackathon.api.qloo.com
 export QLOO_TRUSTED_BASE_URL=https://hackathon.api.qloo.com
 npm start
-node --test   # 38 tests
+node --test   # 40 tests
 ```
 
 ## Limitations

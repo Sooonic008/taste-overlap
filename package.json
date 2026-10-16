@@ -6,12 +6,16 @@
   "license": "MIT",
   "scripts": {
     "test": "node --test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "mcp": "node mcp-server.js"
   },
   "engines": {
     "node": ">=22.19.0"
   },
   "dependencies": {
     "@qloo/qloo-harness": "0.1.26"
+  },
+  "bin": {
+    "taste-overlap-mcp": "mcp-server.js"
   }
 }

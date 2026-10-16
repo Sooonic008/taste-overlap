@@ -20,6 +20,18 @@ npm start                                  # http://localhost:8787
 
 Optional: `QLOO_TRANSPORT=rest` with `QLOO_API_KEY` uses the direct REST client (`src/qloo.js`) instead; `QLOO_BASE`, `PORT`.
 
+## Use it from an agent (MCP tool)
+
+Taste Overlap is also an agent tool: `mcp-server.js` is a dependency-free MCP stdio server with one tool, `plan_shared_evening` (`city`, `person_a[]`, `person_b[]`). It returns the explained evening as text plus structured content, and any MCP client can call it:
+
+```bash
+claude mcp add taste-overlap -- node /path/to/taste-overlap/mcp-server.js   # Claude Code
+# or in claude_desktop_config.json / Cursor: {"command": "node", "args": ["/path/to/mcp-server.js"],
+#   "env": {"QLOO_API_KEY": "...", "QLOO_BASE_URL": "https://hackathon.api.qloo.com", "QLOO_TRUSTED_BASE_URL": "https://hackathon.api.qloo.com"}}
+```
+
+Without a key, `QLOO_TRANSPORT=demo` makes the tool answer the recorded Vienna example.
+
 ## Test
 
 ```bash
@@ -36,6 +48,7 @@ node --test
 - `src/overlap.js` - pure logic: shared picks, reasons, evening order (unit-tested). Qloo returns at most 20 places per call, and two tastes can share none of them (measured: Berlin, Daft Punk + Christopher Nolan vs Adele + Pixar). Real overlaps come first; the rest is topped up from the joint list and labelled "combined taste". A place scored one-sided in both personal lists never comes back that way.
 - `src/plan.js` - three Qloo calls (A, B, both) -> overlap -> explained plan.
 - `server.js` - dependency-free Node server, serves `public/` and `POST /api/plan`.
+- `mcp-server.js` - the same plan as an MCP tool for agents; `src/transport.js` picks the Qloo transport for both.
 
 ## License
 

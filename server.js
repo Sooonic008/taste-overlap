@@ -3,22 +3,14 @@ import http from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize, sep } from "node:path";
 import { fileURLToPath } from "node:url";
-import { client } from "./src/qloo.js";
-import { harnessClient } from "./src/harness.js";
 import { plan } from "./src/plan.js";
-import { replay } from "./src/demo.js";
 import { limiter } from "./src/limit.js";
-import { mcpRunner } from "./src/mcp.js";
+import { qlooTransport } from "./src/transport.js";
 
-// Default: the harness's canonical MCP adapter (`qloo mcp`), one long-running process for all requests.
-// QLOO_TRANSPORT=exec spawns `qloo exec` per call; =rest uses the direct REST client; =demo replays a recorded live run
-// (no key needed, only the recorded example).
-const TRANSPORT = process.env.QLOO_TRANSPORT || "mcp";
-const DEMO = TRANSPORT === "demo"
-  ? replay(JSON.parse(await readFile(new URL("./demo/vienna.json", import.meta.url), "utf8")).calls) : null;
-const MCP = TRANSPORT === "mcp" ? mcpRunner() : null;
-const qlooClient = () => (DEMO ? harnessClient({ run: DEMO }) : MCP ? harnessClient({ run: MCP })
-  : TRANSPORT === "rest" ? client() : harnessClient());
+// How we talk to Qloo (default `qloo mcp`; exec / rest / demo) - shared with mcp-server.js.
+const QLOO = await qlooTransport();
+const DEMO = QLOO.name === "demo";
+const qlooClient = QLOO.client;
 
 // Each live plan costs 11 calls against the event quota.
 const allow = limiter();
