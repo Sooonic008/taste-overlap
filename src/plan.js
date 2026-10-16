@@ -1,4 +1,4 @@
-import { normalise, sharedPicks, reason, evening } from "./overlap.js";
+import { normalise, sharedPicks, reason, evening, fillFromJoint } from "./overlap.js";
 
 /**
  * Full plan for two people: resolve favourites, rank places for A, B and both, keep the real overlaps,
@@ -20,9 +20,11 @@ export async function plan({ city, a, b }, qloo) {
   const tagsA = entA.flatMap((x) => x.tags), tagsB = entB.flatMap((x) => x.tags);
   const names = new Map([...entA, ...entB].map((x) => [x.id, x.name]));
   for (const c of [rA, rB, rBoth].flatMap((r) => r.choices ?? [])) if (!names.has(c.id)) names.set(c.id, c.input);
-  const picks = evening(sharedPicks(normalise(rA), normalise(rB), normalise(rBoth)))
+  const listA = normalise(rA), listB = normalise(rB), joint = normalise(rBoth);
+  const judged = new Set(listA.map((x) => x.id).filter((id) => listB.some((y) => y.id === id)));
+  const picks = evening(fillFromJoint(sharedPicks(listA, listB, joint), joint, 6, judged))
     .map((p) => ({ name: p.name, address: p.address, url: p.url, description: p.description, tags: p.tags.slice(0, 4),
                    why: reason(p, tagsA, tagsB, names),
-                   scoreA: p.scoreA, scoreB: p.scoreB }));
+                   basis: p.basis, scoreA: p.scoreA, scoreB: p.scoreB }));
   return { city, matchedA: entA.map((x) => x.name), matchedB: entB.map((x) => x.name), picks };
 }

@@ -7,10 +7,10 @@ import { fileURLToPath } from "node:url";
 
 // Prefer the harness pinned in package.json (hosted deploys), fall back to a global `qloo`.
 const LOCAL_BIN = fileURLToPath(new URL(`../node_modules/.bin/qloo${process.platform === "win32" ? ".cmd" : ""}`, import.meta.url));
-const DEFAULT_BIN = existsSync(LOCAL_BIN) ? LOCAL_BIN : "qloo";
+export const DEFAULT_BIN = existsSync(LOCAL_BIN) ? LOCAL_BIN : "qloo";
 
 /** Run one workflow: JSON goes in on stdin (no shell quoting of user text), one JSON result comes out. */
-const OPERATIONS = new Set(["recommend", "rank", "describe", "where_popular", "compare_audiences", "entity_tags",
+export const OPERATIONS = new Set(["recommend", "rank", "describe", "where_popular", "compare_audiences", "entity_tags",
   "audience_demographics", "trends", "find_tags"]);
 
 export function runExec(operation, input, { bin = process.env.QLOO_BIN || DEFAULT_BIN, timeoutMs = 30_000 } = {}) {

@@ -51,8 +51,27 @@ export function reason(pick, tagsA, tagsB, names = new Map()) {
   if (forA.length) parts.push(`matches A's taste for ${forA.join(" and ")}`);
   if (forB.length) parts.push(`B's taste for ${forB.join(" and ")}`);
   const pct = (v) => `${Math.round(v * 100)}%`;
-  parts.push(`taste fit A ${pct(pick.scoreA)} · B ${pct(pick.scoreB)}`);
+  if (pick.basis === "combined") parts.push(`Qloo's pick for your combined taste (affinity ${pct(pick.affinity)})`);
+  else parts.push(`taste fit A ${pct(pick.scoreA)} · B ${pct(pick.scoreB)}`);
   return parts.join("; ");
+}
+
+/**
+ * Qloo returns at most 20 places per call; two different tastes may share none of them (measured: Berlin,
+ * Daft Punk + Nolan vs Adele + Pixar). Real overlaps come first; the rest is topped up from the joint list,
+ * labelled `combined` so the UI never presents it as a measured overlap. Places scored in BOTH personal lists were
+ * already judged (e.g. one-sided) and never come back through the joint list.
+ */
+export function fillFromJoint(shared, listBoth, take = 6, judged = new Set()) {
+  const out = shared.slice(0, take).map((p) => ({ ...p, basis: "overlap" }));
+  const have = new Set(out.map((p) => p.id));
+  for (const p of listBoth) {
+    if (out.length >= take) break;
+    if (have.has(p.id) || judged.has(p.id)) continue;
+    have.add(p.id);
+    out.push({ ...p, basis: "combined", score: p.affinity });
+  }
+  return out;
 }
 
 /** Order picks into an evening: something to do first, then food, then a drink - by the place's tags. */
