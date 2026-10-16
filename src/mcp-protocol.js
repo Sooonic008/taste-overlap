@@ -28,14 +28,19 @@ function summary(r) {
   return lines.join("\n");
 }
 
+const VERSIONS = ["2025-06-18", "2025-03-26"];
+
 /** `respond(message)` -> the JSON-RPC answer object, or null for notifications. Never throws. */
 export function mcpProtocol(qlooClient) {
   async function handle(msg) {
     const { id, method, params } = msg;
     if (method === "initialize") {
-      return { protocolVersion: params?.protocolVersion || "2025-06-18", capabilities: { tools: {} },
+      // Answer with a version we speak: the client's if supported, otherwise our newest (spec 2025-06-18).
+      const asked = params?.protocolVersion;
+      return { protocolVersion: VERSIONS.includes(asked) ? asked : VERSIONS[0], capabilities: { tools: {} },
         serverInfo: { name: "taste-overlap", version: "0.1.0" } };
     }
+    if (id === undefined) return undefined;          // notifications never trigger work (a tools/call without id spent quota)
     if (method === "ping") return {};
     if (method === "tools/list") return { tools: [TOOL] };
     if (method === "tools/call") {
@@ -45,10 +50,10 @@ export function mcpProtocol(qlooClient) {
         const r = await plan({ city: a.city, a: a.person_a, b: a.person_b }, qlooClient());
         return { content: [{ type: "text", text: summary(r) }], structuredContent: r };
       } catch (err) {
-        return { isError: true, content: [{ type: "text", text: err.message }] };
+        // Only input errors go back verbatim; upstream/internal messages stay inside (review 16.10.).
+        return { isError: true, content: [{ type: "text", text: err.input ? err.message : "Qloo did not answer - please try again in a minute" }] };
       }
     }
-    if (id === undefined) return undefined;          // notifications need no answer
     throw Object.assign(new Error(`method not found: ${method}`), { code: -32601 });
   }
 
@@ -56,6 +61,7 @@ export function mcpProtocol(qlooClient) {
     if (!msg || typeof msg !== "object" || Array.isArray(msg)) {      // null, numbers, batches: not supported, never fatal
       return { jsonrpc: "2.0", id: null, error: { code: -32600, message: "invalid request (expected one JSON-RPC object)" } };
     }
+    if (typeof msg.method !== "string") return null;                    // a client's response/result: nothing to answer
     try {
       const result = await handle(msg);
       return msg.id === undefined || result === undefined ? null : { jsonrpc: "2.0", id: msg.id, result };

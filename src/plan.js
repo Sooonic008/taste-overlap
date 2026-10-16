@@ -4,14 +4,30 @@ import { normalise, sharedPicks, reason, evening, fillFromJoint } from "./overla
  * Full plan for two people: resolve favourites, rank places for A, B and both, keep the real overlaps,
  * explain each pick and order them into an evening.
  */
-export async function plan({ city, a, b }, qloo) {
-  const clean = (l) => (l ?? []).map((s) => String(s).trim()).filter(Boolean).slice(0, 5);
-  const favA = clean(a), favB = clean(b);
-  if (!city || !favA.length || !favB.length) throw new Error("city and at least one favourite per person are required");
+/** An error whose message is safe to show to the caller (bad input), as opposed to upstream/internal failures. */
+export function inputError(message) {
+  return Object.assign(new Error(message), { input: true });
+}
+
+const MAX_TEXT = 80;
+
+export async function plan({ city, a, b } = {}, qloo) {
+  // Public input (web form, remote MCP): check type and length before anything reaches Qloo (review 16.10.).
+  if (typeof city !== "string" || !city.trim() || city.length > MAX_TEXT) throw inputError(`city must be a text of 1-${MAX_TEXT} characters`);
+  const clean = (l, who) => {
+    if (l == null) return [];
+    if (!Array.isArray(l)) throw inputError(`favourites of person ${who} must be a list of names`);
+    const names = l.map((s) => (typeof s === "string" ? s.trim() : null));
+    if (names.some((s) => s === null || s.length > MAX_TEXT)) throw inputError(`each favourite must be a text of at most ${MAX_TEXT} characters`);
+    return names.filter(Boolean).slice(0, 5);
+  };
+  const favA = clean(a, "A"), favB = clean(b, "B");
+  if (!favA.length || !favB.length) throw inputError("city and at least one favourite per person are required");
+  city = city.trim();
 
   const resolveAll = async (names) => (await Promise.all(names.map((n) => qloo.resolve(n).catch(() => null)))).filter(Boolean);
   const [entA, entB] = await Promise.all([resolveAll(favA), resolveAll(favB)]);
-  if (!entA.length || !entB.length) throw new Error("Qloo could not match the favourites - try other names");
+  if (!entA.length || !entB.length) throw inputError("Qloo could not match the favourites - try other names");
 
   const ids = (l) => l.map((x) => x.id);
   const [rA, rB, rBoth] = await Promise.all([
