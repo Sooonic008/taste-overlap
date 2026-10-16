@@ -1,0 +1,4173 @@
+{
+ "recorded_at": "2026-10-16T11:33:29.444Z",
+ "calls": [
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "Radiohead"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "needs_input",
+    "summary": "Choose or correct the unresolved Qloo entities.",
+    "resolution": {
+     "issues": [
+      {
+       "input": "Radiohead",
+       "kind": "ambiguous",
+       "input_kind": "entity",
+       "field": "entities",
+       "candidates": [
+        {
+         "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "name": "Radiohead",
+         "type": "urn:entity:artist",
+         "popularity": 0.9999966263060412,
+         "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+        },
+        {
+         "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "name": "Radiohead",
+         "type": "urn:entity:person",
+         "popularity": 0.9665528750502821
+        },
+        {
+         "id": "B48A4E4B-5448-44CB-A2BE-58108E3C26A2",
+         "name": "Radiohead",
+         "type": "urn:entity:album",
+         "popularity": 0.9570124427079798
+        },
+        {
+         "id": "1B71B1D7-E72E-45F2-95C1-ACEE0D87BDD4",
+         "name": "Radiohead",
+         "type": "urn:entity:person",
+         "popularity": 0.9259629706134963
+        }
+       ],
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/search",
+        "strategy": "exact_name_context_or_choice",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [],
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "Radiohead"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-657baf88-fa6c-4f0c-9f56-64250328967f",
+     "duration_ms": 500
+    }
+   }
+  },
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "Studio Ghibli"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "needs_input",
+    "summary": "Choose or correct the unresolved Qloo entities.",
+    "resolution": {
+     "issues": [
+      {
+       "input": "Studio Ghibli",
+       "kind": "ambiguous",
+       "input_kind": "entity",
+       "field": "entities",
+       "candidates": [
+        {
+         "id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "name": "Studio Ghibli",
+         "type": "urn:entity:artist",
+         "popularity": 0.7971195400980395,
+         "description": "A renowned Japanese animation studio known for its iconic animated films and music."
+        },
+        {
+         "id": "8714FD40-3CC2-4BB6-842A-460ABA6C40FD",
+         "name": "Studio Ghibli",
+         "type": "urn:entity:author",
+         "popularity": 0.7906772328830397
+        }
+       ],
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/search",
+        "strategy": "exact_name_context_or_choice",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [],
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "Studio Ghibli"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-d4bd172d-5d42-4920-bb31-d86d426d8ab3",
+     "duration_ms": 503
+    }
+   }
+  },
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "Wes Anderson"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "needs_input",
+    "summary": "Choose or correct the unresolved Qloo entities.",
+    "resolution": {
+     "issues": [
+      {
+       "input": "Wes Anderson",
+       "kind": "ambiguous",
+       "input_kind": "entity",
+       "field": "entities",
+       "candidates": [
+        {
+         "id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "name": "Wes Anderson",
+         "type": "urn:entity:author",
+         "popularity": 0.9670742174439086
+        },
+        {
+         "id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "name": "Wes Anderson",
+         "type": "urn:entity:person",
+         "popularity": 0.0457703221317446
+        },
+        {
+         "id": "2D4AF7B5-115B-4DEF-BBB8-34DEE52C0885",
+         "name": "Wes Anderson",
+         "type": "urn:entity:person",
+         "description": "researcher (ORCID 0000-0002-7170-6946)"
+        }
+       ],
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/search",
+        "strategy": "exact_name_context_or_choice",
+        "remote": true,
+        "uses_model": false
+       },
+       "warnings": [
+        "Qloo candidate choices were narrowed using the supplied name and location terms."
+       ]
+      }
+     ]
+    },
+    "results": [],
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "Wes Anderson"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-c33147f4-e957-458b-92eb-c3c32db367cd",
+     "duration_ms": 597
+    }
+   }
+  },
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "Taylor Swift"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "needs_input",
+    "summary": "Choose or correct the unresolved Qloo entities.",
+    "resolution": {
+     "issues": [
+      {
+       "input": "Taylor Swift",
+       "kind": "ambiguous",
+       "input_kind": "entity",
+       "field": "entities",
+       "candidates": [
+        {
+         "id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "name": "Taylor Swift",
+         "type": "urn:entity:person",
+         "popularity": 0.9999836922842761,
+         "description": "American singer-songwriter (born 1989)"
+        },
+        {
+         "id": "4BBEF799-A0C4-4110-AB01-39216993C312",
+         "name": "Taylor Swift",
+         "type": "urn:entity:artist",
+         "popularity": 0.999790830974559,
+         "description": "An American singer-songwriter known for narrative songwriting and genre versatility."
+        },
+        {
+         "id": "563777F9-17DB-4EE0-955F-2922998627B5",
+         "name": "Taylor Swift",
+         "type": "urn:entity:album",
+         "popularity": 0.9986976514985807,
+         "release_year": 2006
+        },
+        {
+         "id": "AE34A4B5-F6BC-4108-AD77-02FC6E094C08",
+         "name": "Taylor Swift",
+         "type": "urn:entity:author",
+         "popularity": 0.9749885387115789,
+         "description": "American singer-songwriter and music producer"
+        }
+       ],
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/search",
+        "strategy": "exact_name_context_or_choice",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [],
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "Taylor Swift"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-379783da-6c07-4be1-887b-1963d5a809ab",
+     "duration_ms": 637
+    }
+   }
+  },
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "ok",
+    "interpretation": {
+     "entities": [
+      {
+       "input": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "entityId": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "name": "Wes Anderson",
+       "type": "urn:entity:author",
+       "match": "identifier"
+      }
+     ]
+    },
+    "resolution": {
+     "contract_version": "1.0-preview.1",
+     "provider": {
+      "contract_version": "1.0-preview.1",
+      "provider_id": "qloo_api",
+      "name": "Qloo native resolution",
+      "entity_strategy": "exact_name_context_or_choice",
+      "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+      "remote": true,
+      "uses_model": false,
+      "fallback": "none"
+     },
+     "outcomes": [
+      {
+       "input": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "name": "Wes Anderson",
+        "type": "urn:entity:author",
+        "popularity": 0.9670742174439086
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [
+     {
+      "id": "urn:tag:category:qloo:exploration",
+      "name": "Exploration",
+      "type": "urn:tag:category:qloo",
+      "popularity": 0.9915880788797876,
+      "affinity": 0.9991912129197213
+     },
+     {
+      "id": "urn:tag:category:qloo:narrative",
+      "name": "Narrative",
+      "type": "urn:tag:category:qloo",
+      "popularity": 0.9820374085535691,
+      "affinity": 0.9989289214010619
+     },
+     {
+      "id": "urn:tag:endorsement:qloo:lancome",
+      "name": "Lancôme",
+      "type": "urn:tag:endorsement:qloo",
+      "popularity": 0.8144812497339365,
+      "affinity": 0.9987234504861753
+     },
+     {
+      "id": "urn:tag:category:qloo:indie",
+      "name": "Indie",
+      "type": "urn:tag:category:qloo",
+      "popularity": 0.9931945286525461,
+      "affinity": 0.9986318968249995
+     },
+     {
+      "id": "urn:tag:style:qloo:pastel_hued",
+      "name": "Pastel Hued",
+      "type": "urn:tag:style:qloo",
+      "popularity": 0.9891010205368771,
+      "affinity": 0.9986254621291117
+     },
+     {
+      "id": "urn:tag:endorsement:qloo:louis_vuitton",
+      "name": "Louis Vuitton",
+      "type": "urn:tag:endorsement:qloo",
+      "popularity": 0.8954043559474034,
+      "affinity": 0.9986144840899184
+     },
+     {
+      "id": "urn:tag:keyword:qloo:scouting",
+      "name": "Scouting",
+      "type": "urn:tag:keyword:qloo",
+      "popularity": 0.9844569830530787,
+      "affinity": 0.9985279685966634
+     },
+     {
+      "id": "urn:tag:category:qloo:survival",
+      "name": "Survival",
+      "type": "urn:tag:category:qloo",
+      "popularity": 0.988625886102604,
+      "affinity": 0.998506925902111
+     }
+    ],
+    "result_count": 8,
+    "provenance": {
+     "source": "Qloo API",
+     "endpoint": "/v2/insights",
+     "documentation": "https://docs.qloo.com/reference/taste-analysis",
+     "requests": [
+      {
+       "method": "GET",
+       "path": "/v2/insights",
+       "query": {
+        "filter.type": "urn:tag",
+        "signal.interests.entities": [
+         "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5"
+        ],
+        "take": 8
+       }
+      }
+     ],
+     "transport": "direct"
+    },
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-f0178c03-e368-46a3-99f6-1c9c36b08ae5",
+     "duration_ms": 665
+    }
+   }
+  },
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "ok",
+    "interpretation": {
+     "entities": [
+      {
+       "input": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "entityId": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "name": "Studio Ghibli",
+       "type": "urn:entity:artist",
+       "match": "identifier"
+      }
+     ]
+    },
+    "resolution": {
+     "contract_version": "1.0-preview.1",
+     "provider": {
+      "contract_version": "1.0-preview.1",
+      "provider_id": "qloo_api",
+      "name": "Qloo native resolution",
+      "entity_strategy": "exact_name_context_or_choice",
+      "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+      "remote": true,
+      "uses_model": false,
+      "fallback": "none"
+     },
+     "outcomes": [
+      {
+       "input": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "name": "Studio Ghibli",
+        "type": "urn:entity:artist",
+        "popularity": 0.7971195400980395,
+        "description": "A renowned Japanese animation studio known for its iconic animated films and music."
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [
+     {
+      "id": "urn:tag:genre:music:j_pop",
+      "name": " J-pop",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9993223334788468,
+      "affinity": 0.9993917274939172
+     },
+     {
+      "id": "urn:tag:genre:music:anime",
+      "name": "anime",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9987171618810854,
+      "affinity": 0.9993917274939172
+     },
+     {
+      "id": "urn:tag:genre:music:jpop",
+      "name": "JPop",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9986890435901057,
+      "affinity": 0.9981751824817517
+     },
+     {
+      "id": "urn:tag:genre:music:j_rock",
+      "name": "J-rock",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9987213246448338,
+      "affinity": 0.9969586374695865
+     },
+     {
+      "id": "urn:tag:genre:music:video_game_music",
+      "name": "Video-Game Music",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9988927048429279,
+      "affinity": 0.9941200324412003
+     },
+     {
+      "id": "urn:tag:genre:music:soundtrack",
+      "name": " soundtrack",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9993915296083248,
+      "affinity": 0.9939172749391727
+     },
+     {
+      "id": "urn:tag:genre:music:game",
+      "name": "game",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9975628196393853,
+      "affinity": 0.9894566098945661
+     },
+     {
+      "id": "urn:tag:genre:music:k_pop",
+      "name": "k pop",
+      "type": "urn:tag:genre:music",
+      "popularity": 0.9985351784168397,
+      "affinity": 0.9890510948905109
+     }
+    ],
+    "result_count": 8,
+    "provenance": {
+     "source": "Qloo API",
+     "endpoint": "/v2/insights",
+     "documentation": "https://docs.qloo.com/reference/taste-analysis",
+     "requests": [
+      {
+       "method": "GET",
+       "path": "/v2/insights",
+       "query": {
+        "filter.type": "urn:tag",
+        "signal.interests.entities": [
+         "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+        ],
+        "take": 8
+       }
+      }
+     ],
+     "transport": "direct"
+    },
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-fd818b41-8d39-41b5-b9d8-d1c7bc62406c",
+     "duration_ms": 4621
+    }
+   }
+  },
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "ok",
+    "interpretation": {
+     "entities": [
+      {
+       "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "entityId": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "name": "Radiohead",
+       "type": "urn:entity:artist",
+       "match": "identifier"
+      }
+     ]
+    },
+    "resolution": {
+     "contract_version": "1.0-preview.1",
+     "provider": {
+      "contract_version": "1.0-preview.1",
+      "provider_id": "qloo_api",
+      "name": "Qloo native resolution",
+      "entity_strategy": "exact_name_context_or_choice",
+      "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+      "remote": true,
+      "uses_model": false,
+      "fallback": "none"
+     },
+     "outcomes": [
+      {
+       "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "name": "Radiohead",
+        "type": "urn:entity:artist",
+        "popularity": 0.9999966263060412,
+        "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [
+     {
+      "id": "urn:tag:genre:place:restaurant:bar",
+      "name": "Bar",
+      "type": "urn:tag:genre:place",
+      "popularity": 0.9999871189951937,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:specialty_dish:place:os_a_moelle",
+      "name": "Os A Moelle",
+      "type": "urn:tag:specialty_dish:place",
+      "popularity": 0.9586864548223105,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:credit_card:place:visa",
+      "name": "VISA",
+      "type": "urn:tag:credit_card:place",
+      "popularity": 0.9999964655779495,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+      "name": "Identifies as women-owned",
+      "type": "urn:tag:inclusivity:place",
+      "popularity": 0.9999950518091293,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:hotel_rating:place:two_star",
+      "name": "Two Star",
+      "type": "urn:tag:hotel_rating:place",
+      "popularity": 0.9999171374385933,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:cost_description:place:inexpensive",
+      "name": "Inexpensive",
+      "type": "urn:tag:cost_description:place",
+      "popularity": 0.9999875117087548,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:genre:brand:entertainment",
+      "name": "Entertainment",
+      "type": "urn:tag:genre:brand",
+      "popularity": 0.9988227232863276,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:keyword:media:surrealism",
+      "name": "surrealism",
+      "type": "urn:tag:keyword:media",
+      "popularity": 0.9978782234014032,
+      "affinity": 1
+     }
+    ],
+    "result_count": 8,
+    "provenance": {
+     "source": "Qloo API",
+     "endpoint": "/v2/insights",
+     "documentation": "https://docs.qloo.com/reference/taste-analysis",
+     "requests": [
+      {
+       "method": "GET",
+       "path": "/v2/insights",
+       "query": {
+        "filter.type": "urn:tag",
+        "signal.interests.entities": [
+         "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+        ],
+        "take": 8
+       }
+      }
+     ],
+     "transport": "direct"
+    },
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-e3858059-9e9c-4e83-a390-5d53a12f6978",
+     "duration_ms": 5023
+    }
+   }
+  },
+  {
+   "op": "entity_tags",
+   "input": {
+    "entities": [
+     "3C9EEC3A-F4FE-48A4-B89F-97375F292448"
+    ],
+    "limit": 8
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "entity_tags",
+    "status": "ok",
+    "interpretation": {
+     "entities": [
+      {
+       "input": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "entityId": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "name": "Taylor Swift",
+       "type": "urn:entity:person",
+       "match": "identifier"
+      }
+     ]
+    },
+    "resolution": {
+     "contract_version": "1.0-preview.1",
+     "provider": {
+      "contract_version": "1.0-preview.1",
+      "provider_id": "qloo_api",
+      "name": "Qloo native resolution",
+      "entity_strategy": "exact_name_context_or_choice",
+      "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+      "remote": true,
+      "uses_model": false,
+      "fallback": "none"
+     },
+     "outcomes": [
+      {
+       "input": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "name": "Taylor Swift",
+        "type": "urn:entity:person",
+        "popularity": 0.9999836922842761,
+        "description": "American singer-songwriter (born 1989)"
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [
+     {
+      "id": "urn:tag:cost_description:place:inexpensive",
+      "name": "Inexpensive",
+      "type": "urn:tag:cost_description:place",
+      "popularity": 0.9999875117087548,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:genre:place:restaurant",
+      "name": "Restaurant",
+      "type": "urn:tag:genre:place",
+      "popularity": 0.9999996858291511,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:specialty_dish:place:broccoli_rabe",
+      "name": "Broccoli Rabe",
+      "type": "urn:tag:specialty_dish:place",
+      "popularity": 0.9684241017423444,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:credit_card:place:discover",
+      "name": "Discover",
+      "type": "urn:tag:credit_card:place",
+      "popularity": 0.9999869619097692,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:inclusivity:place:identifies_as_women_owned",
+      "name": "Identifies as women-owned",
+      "type": "urn:tag:inclusivity:place",
+      "popularity": 0.9999950518091293,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:genre:brand:entertainment",
+      "name": "Entertainment",
+      "type": "urn:tag:genre:brand",
+      "popularity": 0.9988227232863276,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:hotel_rating:place:three_star",
+      "name": "Three Star",
+      "type": "urn:tag:hotel_rating:place",
+      "popularity": 0.9999551521113145,
+      "affinity": 1
+     },
+     {
+      "id": "urn:tag:keyword:qloo:pop_music",
+      "name": "Pop Music",
+      "type": "urn:tag:keyword:qloo",
+      "popularity": 0.9943784960483583,
+      "affinity": 0.9999872447352645
+     }
+    ],
+    "result_count": 8,
+    "provenance": {
+     "source": "Qloo API",
+     "endpoint": "/v2/insights",
+     "documentation": "https://docs.qloo.com/reference/taste-analysis",
+     "requests": [
+      {
+       "method": "GET",
+       "path": "/v2/insights",
+       "query": {
+        "filter.type": "urn:tag",
+        "signal.interests.entities": [
+         "3C9EEC3A-F4FE-48A4-B89F-97375F292448"
+        ],
+        "take": 8
+       }
+      }
+     ],
+     "transport": "direct"
+    },
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "entity_tags",
+     "job": "entity_tags",
+     "signals": {
+      "entities": [
+       "3C9EEC3A-F4FE-48A4-B89F-97375F292448"
+      ]
+     },
+     "filters": {},
+     "operators": {},
+     "output": {
+      "limit": 8
+     },
+     "assumptions": [],
+     "unresolved": []
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-6954ee6a-d1f3-47fa-b06d-5addd992c608",
+     "duration_ms": 4960
+    }
+   }
+  },
+  {
+   "op": "recommend",
+   "input": {
+    "target_type": "place",
+    "signals": [
+     "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+     "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+     "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+     "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+    ],
+    "filter_location": "Vienna",
+    "explain": true,
+    "limit": 20
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "recommend",
+    "status": "ok",
+    "interpretation": {
+     "target_type": "urn:entity:place",
+     "signals": [
+      {
+       "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "entityId": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "name": "Radiohead",
+       "type": "urn:entity:artist",
+       "match": "identifier"
+      },
+      {
+       "input": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "entityId": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "name": "Wes Anderson",
+       "type": "urn:entity:author",
+       "match": "identifier"
+      },
+      {
+       "input": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "entityId": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "name": "Taylor Swift",
+       "type": "urn:entity:person",
+       "match": "identifier"
+      },
+      {
+       "input": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "entityId": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "name": "Studio Ghibli",
+       "type": "urn:entity:artist",
+       "match": "identifier"
+      }
+     ],
+     "signal_tags": [],
+     "filter_location": "Vienna",
+     "include_tags": [],
+     "exclude_tags": []
+    },
+    "resolution": {
+     "contract_version": "1.0-preview.1",
+     "provider": {
+      "contract_version": "1.0-preview.1",
+      "provider_id": "qloo_api",
+      "name": "Qloo native resolution",
+      "entity_strategy": "exact_name_context_or_choice",
+      "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+      "remote": true,
+      "uses_model": false,
+      "fallback": "none"
+     },
+     "outcomes": [
+      {
+       "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "name": "Radiohead",
+        "type": "urn:entity:artist",
+        "popularity": 0.9999966263060412,
+        "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      },
+      {
+       "input": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "name": "Wes Anderson",
+        "type": "urn:entity:author",
+        "popularity": 0.9670742174439086
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      },
+      {
+       "input": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "name": "Taylor Swift",
+        "type": "urn:entity:person",
+        "popularity": 0.9999836922842761,
+        "description": "American singer-songwriter (born 1989)"
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      },
+      {
+       "input": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "name": "Studio Ghibli",
+        "type": "urn:entity:artist",
+        "popularity": 0.7971195400980395,
+        "description": "A renowned Japanese animation studio known for its iconic animated films and music."
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [
+     {
+      "entity_id": "48FEEF7D-8684-441C-9BDF-00708B870974",
+      "name": "Wein Austria",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.8300797406932355,
+      "affinity": 0.8561431676304985,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.2771129439216058
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.2606251841637287
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.2404870297981779
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.2217748421164876
+        }
+       ]
+      },
+      "properties": {
+       "description": "Specialty wine shop and webshop offering award-winning Austrian family-estate wines, with curated selection of regional vintages and direct sales from producers.",
+       "short_description": "Specialty wine shop and webshop offering award-winning Austrian family-estate wines, with curated selection of regional vintages and direct sales from producers.",
+       "image": {
+        "url": "https://images.qloo.com/i/48FEEF7D-8684-441C-9BDF-00708B870974-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Heiligenstadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kahlenberger Str. 55 1190 Wien Austria",
+       "price_level": null,
+       "business_rating": null
+      }
+     },
+     {
+      "entity_id": "344F0B64-441C-4FD1-A819-51809487325C",
+      "name": "Wien Museum Mozart apartment",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9903660746755044,
+      "affinity": 0.8472683586942987,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.2862163176448354
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.24201855550455095
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.2398720585734801
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.2318930682771335
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic 18th-century apartment museum where Mozart lived and composed, featuring exhibits and intimate live-music concerts in the Bösendorfer Hall near Vienna's cathedral.",
+       "short_description": "Historic 18th-century apartment museum where Mozart lived and composed, featuring exhibits and intimate live-music concerts in the Bösendorfer Hall near Vienna's cathedral.",
+       "image": {
+        "url": "https://images.qloo.com/i/344F0B64-441C-4FD1-A819-51809487325C-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Mozarthaus Domgasse 5 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "E5CBD5F7-B29C-48F7-A488-CE71EF9C4FDE",
+      "name": "Sigmund Freud Museum",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9960703554584319,
+      "affinity": 0.8366934528340934,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.3004627738349842
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.24277007709521503
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.24180453527014725
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.21496261379965362
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic house museum preserving Freud's former Vienna residence and practice, with exhibits on psychoanalysis, original rooms, archives, and a museum café.",
+       "short_description": "Historic house museum preserving Freud's former Vienna residence and practice, with exhibits on psychoanalysis, original rooms, archives, and a museum café.",
+       "image": {
+        "url": "https://images.qloo.com/i/E5CBD5F7-B29C-48F7-A488-CE71EF9C4FDE-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "KG Alsergrund",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Berggasse 19 1090 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "76FFA421-95FF-4EBE-A126-A168687F8555",
+      "name": "Wiener Mozart Orchester - Wiener Mozart Konzerte",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.76480302930685,
+      "affinity": 0.8271517286838691,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.27049471962884225
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.2536067582495503
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.24815232805543808
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.22774619406616925
+        }
+       ]
+      },
+      "properties": {
+       "description": "Period-costumed ensemble performing Mozart and Strauss repertoire in Vienna's historic concert halls for tourists.",
+       "short_description": "Period-costumed ensemble performing Mozart and Strauss repertoire in Vienna's historic concert halls for tourists.",
+       "image": {
+        "url": "https://images.qloo.com/i/76FFA421-95FF-4EBE-A126-A168687F8555-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kärntner Str. 51 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     },
+     {
+      "entity_id": "41A899B2-8A55-4F01-B6E5-A4DE45CDF6A5",
+      "name": "Naschmarkt",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9988982582748567,
+      "affinity": 0.8258984897624841,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.2861929955140988
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.25269838014663665
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.2354072724918034
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.22570135184746123
+        }
+       ]
+      },
+      "properties": {
+       "description": "Large historic open-air food market offering international stalls, fresh produce, eateries and a popular weekend flea market in central Vienna.",
+       "short_description": "Large historic open-air food market offering international stalls, fresh produce, eateries and a popular weekend flea market in central Vienna.",
+       "image": {
+        "url": "https://images.qloo.com/i/41A899B2-8A55-4F01-B6E5-A4DE45CDF6A5-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Mariahilf",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Technical university Vienna Mariedlgasse 1060 Wien Austria",
+       "price_level": null,
+       "business_rating": 3.5999999046325684
+      }
+     },
+     {
+      "entity_id": "6B6E851A-EBE0-403F-B5F0-1262EB72FF00",
+      "name": "Kunst Haus Wien. Museum Hundertwasser",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.998653282324846,
+      "affinity": 0.8197864935657966,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.29667616881205033
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.23538587695059798
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.23456796472974975
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.23336998950760193
+        }
+       ]
+      },
+      "properties": {
+       "description": "Museum in a former factory showcasing Hundertwasser's paintings, architecture, and ecological design philosophy.",
+       "short_description": "Museum in a former factory showcasing Hundertwasser's paintings, architecture, and ecological design philosophy.",
+       "image": {
+        "url": "https://images.qloo.com/i/6B6E851A-EBE0-403F-B5F0-1262EB72FF00-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Landstraße",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Untere Weißgerberstraße 13 1030 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "D3E16295-C925-47D3-A78B-4E96E8CE1002",
+      "name": "Leopold Museum",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9994742024909169,
+      "affinity": 0.8146765151337781,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.3068876578473598
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.23649233563283284
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.23391815033468027
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.22270185618512714
+        }
+       ]
+      },
+      "properties": {
+       "description": "Large museum in Vienna's MuseumsQuartier housing one of the world's largest Egon Schiele collections plus Klimt and Kokoschka, with a cafe and shop.",
+       "short_description": "Large museum in Vienna's MuseumsQuartier housing one of the world's largest Egon Schiele collections plus Klimt and Kokoschka, with a cafe and shop.",
+       "image": {
+        "url": "https://images.qloo.com/i/D3E16295-C925-47D3-A78B-4E96E8CE1002-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Neubau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Museumsplatz 1 1070 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "7AFEB5EF-D512-4201-A807-326E6E91921E",
+      "name": "mumok - Museum moderner Kunst Stiftung Ludwig Wien",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9977615995833737,
+      "affinity": 0.8100527580399531,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.3024797753727936
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.23949309617422196
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.23925374657046708
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.21877338188251735
+        }
+       ]
+      },
+      "properties": {
+       "description": "Bold, basalt-clad museum in Vienna's MuseumsQuartier showcasing modern and contemporary art, including Pop Art, photorealism, and multimedia works.",
+       "short_description": "Bold, basalt-clad museum in Vienna's MuseumsQuartier showcasing modern and contemporary art, including Pop Art, photorealism, and multimedia works.",
+       "image": {
+        "url": "https://images.qloo.com/i/7AFEB5EF-D512-4201-A807-326E6E91921E-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Neubau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Museumsplatz 1 1070 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "EDC3E184-C4B4-46AF-BD51-78C829D186E3",
+      "name": "Central European University Vienna",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9727422931011875,
+      "affinity": 0.8096717962638755,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.2864867315274019
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.25416553679618964
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.23062722643978864
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.22872050523661971
+        }
+       ]
+      },
+      "properties": {
+       "description": "International graduate research university in Vienna offering master's and doctoral programs in social sciences, humanities, law, and public policy.",
+       "short_description": "International graduate research university in Vienna offering master's and doctoral programs in social sciences, humanities, law, and public policy.",
+       "image": {
+        "url": "https://images.qloo.com/i/EDC3E184-C4B4-46AF-BD51-78C829D186E3-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Favoriten",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Quellenstraße 51 1100 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "0EA5CFCB-29D3-4378-AFB6-F1FFF8E7401A",
+      "name": "Karlsplatz",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.8964401781359614,
+      "affinity": 0.8089773842124793,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.2842283599194545
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.24692653458585978
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.23639211952912073
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.23245298596556516
+        }
+       ]
+      },
+      "properties": {
+       "description": "Central Viennese square and park anchored by the Baroque Karlskirche, with a reflecting pond, cultural venues, and busy metro interchange.",
+       "short_description": "Central Viennese square and park anchored by the Baroque Karlskirche, with a reflecting pond, cultural venues, and busy metro interchange.",
+       "image": {
+        "url": "https://images.qloo.com/i/0EA5CFCB-29D3-4378-AFB6-F1FFF8E7401A-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Wieden",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "1040 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.800000190734863
+      }
+     },
+     {
+      "entity_id": "62635B69-7785-40BD-8496-04D5B61EAF03",
+      "name": "Austrian Parliament",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9768424364464781,
+      "affinity": 0.8082525929535926,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.28803046018392403
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.25577655946510575
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.23629258782672283
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.21990039252424748
+        }
+       ]
+      },
+      "properties": {
+       "description": "Imposing neoclassical seat of Austria's legislature offering guided tours of lavish chambers and an interactive visitor center showcasing parliamentary history and democracy.",
+       "short_description": "Imposing neoclassical seat of Austria's legislature offering guided tours of lavish chambers and an interactive visitor center showcasing parliamentary history and democracy.",
+       "image": {
+        "url": "https://images.qloo.com/i/62635B69-7785-40BD-8496-04D5B61EAF03-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Dr. Karl Renner-Ring 3 1017 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "97058E46-B345-401E-848D-4EC6E531CFFF",
+      "name": "Albertina",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9999286802389658,
+      "affinity": 0.8066901647273171,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.30415886165897543
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.2421833764571277
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.23310909777229252
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.22054866411160431
+        }
+       ]
+      },
+      "properties": {
+       "description": "19th-century Habsburg palace housing renowned old-master prints, modern art collections, and historic state rooms in central Vienna.",
+       "short_description": "19th-century Habsburg palace housing renowned old-master prints, modern art collections, and historic state rooms in central Vienna.",
+       "image": {
+        "url": "https://images.qloo.com/i/97058E46-B345-401E-848D-4EC6E531CFFF-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Albertinapl. 1 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "E623030F-326F-42EB-9B20-ECD9263155EB",
+      "name": "Café Sperl",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9903946768713358,
+      "affinity": 0.8048770065815815,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.28219602282386363
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.24750993586287562
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.23902013323936463
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.23127390807389622
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic 1880 Viennese coffeehouse serving traditional fare, homemade pastries, live piano music and a seasonal garden.",
+       "short_description": "Historic 1880 Viennese coffeehouse serving traditional fare, homemade pastries, live piano music and a seasonal garden.",
+       "image": {
+        "url": "https://images.qloo.com/i/E623030F-326F-42EB-9B20-ECD9263155EB-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Mariahilf",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Gumpendorfer Str. 11 1060 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "098764F2-F757-43E5-B827-859A2CC89C6E",
+      "name": "Moxy Vienna Airport",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9789433977402779,
+      "affinity": 0.8040880956593579,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.271980767725452
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.25162882224023403
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.24763067937340266
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.2287597306609114
+        }
+       ]
+      },
+      "properties": {
+       "description": "Modern, relaxed airport hotel with streamlined rooms, a casual restaurant/bar, and convenient access to Vienna International Airport.",
+       "short_description": "Modern, relaxed airport hotel with streamlined rooms, a casual restaurant/bar, and convenient access to Vienna International Airport.",
+       "image": {
+        "url": "https://images.qloo.com/i/098764F2-F757-43E5-B827-859A2CC89C6E-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Schwechat",
+        "name": null,
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Lower Austria",
+        "admin2_region": "Bezirk Bruck an der Leitha"
+       },
+       "address": "Ausfahrtsstraße 4 1300 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     },
+     {
+      "entity_id": "065BAC4B-4EF4-4095-8DF7-BC022C71D97E",
+      "name": "St. Charles's Church",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.999311690014602,
+      "affinity": 0.8037585909326888,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.29094568944558824
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.24759518805122013
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.2411879232333882
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.22027119926980326
+        }
+       ]
+      },
+      "properties": {
+       "description": "18th-century Habsburg Baroque domed church with ornate frescoes and a 32.5-meter interior viewing platform.",
+       "short_description": "18th-century Habsburg Baroque domed church with ornate frescoes and a 32.5-meter interior viewing platform.",
+       "image": {
+        "url": "https://images.qloo.com/i/065BAC4B-4EF4-4095-8DF7-BC022C71D97E-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Wieden",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Karlskirche Karlsplatz 10 1040 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "9D3D47EE-507E-47C1-955E-0FF27452932B",
+      "name": "Hundertwasser House",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9997201070836496,
+      "affinity": 0.8029238334718728,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.3072438214948451
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.2357173263177327
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.2287890346689832
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.22824981751843904
+        }
+       ]
+      },
+      "properties": {
+       "description": "Brightly painted, organic apartment block with irregular windows, balconies and integrated trees on its forested roof.",
+       "short_description": "Brightly painted, organic apartment block with irregular windows, balconies and integrated trees on its forested roof.",
+       "image": {
+        "url": "https://images.qloo.com/i/9D3D47EE-507E-47C1-955E-0FF27452932B-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Landstraße",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kegelgasse 36-38 1030 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.5
+      }
+     },
+     {
+      "entity_id": "119BAB18-0CA3-49AF-84B7-9B8A6FB972AA",
+      "name": "Couch-Potato",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.29862271140644425,
+      "affinity": 0.8020741456332723,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.2733699655095825
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.26047728829834976
+        },
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.2546245795060281
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.21152816668603971
+        }
+       ]
+      },
+      "properties": {
+       "description": "Relaxed cocktail bar and restaurant near Handelskai in Vienna serving cocktails, beer, wine and comfort food with happy-hour specials, dine-in, takeout and delivery.",
+       "short_description": "Relaxed cocktail bar and restaurant near Handelskai in Vienna serving cocktails, beer, wine and comfort food with happy-hour specials, dine-in, takeout and delivery.",
+       "image": {
+        "url": "https://images.qloo.com/i/119BAB18-0CA3-49AF-84B7-9B8A6FB972AA-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Brigittenau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Handelskai 94-96 1200 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "354A217E-86F2-43E8-8310-D7A7FF065784",
+      "name": "boesner",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.3775736868713321,
+      "affinity": 0.8017683255234364,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.27996911578786526
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.2511994486995921
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.2380820911452096
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.23074934436733302
+        }
+       ]
+      },
+      "properties": {
+       "description": "Artist-oriented café inside an art-supply shop in Vienna serving coffee, beer, wine and seasonal Austrian dishes with outdoor seating.",
+       "short_description": "Artist-oriented café inside an art-supply shop in Vienna serving coffee, beer, wine and seasonal Austrian dishes with outdoor seating.",
+       "image": {
+        "url": "https://images.qloo.com/i/354A217E-86F2-43E8-8310-D7A7FF065784-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Simmering",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Unter der Kirche 4 1110 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4.800000190734863
+      }
+     },
+     {
+      "entity_id": "D78EA91D-B175-4FF2-9B00-07D64E4EFADF",
+      "name": "Fahrschule Karlsplatz",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9312174766102758,
+      "affinity": 0.8012819088641913,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.28794769871572057
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.24182670856811972
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.23722693037489465
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.2329986623412651
+        }
+       ]
+      },
+      "properties": {
+       "description": "Central Vienna driving school combining tradition since 1938 with modern vehicles, ISO-certified training, transparent pricing and flexible, free course scheduling.",
+       "short_description": "Central Vienna driving school combining tradition since 1938 with modern vehicles, ISO-certified training, transparent pricing and flexible, free course scheduling.",
+       "image": {
+        "url": "https://images.qloo.com/i/D78EA91D-B175-4FF2-9B00-07D64E4EFADF-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Karlsplatz 2 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.5
+      }
+     },
+     {
+      "entity_id": "8FF5B7C7-9673-4883-8102-E5BC9FF4A239",
+      "name": "Kunsthalle Wien Museumsquartier",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9667111300801864,
+      "affinity": 0.8010694560702861,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.303601260994478
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.23908677099132591
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.2301120994080918
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.22719986860610425
+        }
+       ]
+      },
+      "properties": {
+       "description": "Contemporary art center in Vienna's MuseumsQuartier presenting international exhibitions and analytical, research-driven programming.",
+       "short_description": "Contemporary art center in Vienna's MuseumsQuartier presenting international exhibitions and analytical, research-driven programming.",
+       "image": {
+        "url": "https://images.qloo.com/i/8FF5B7C7-9673-4883-8102-E5BC9FF4A239-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Neubau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Museumsplatz 1 1070 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     }
+    ],
+    "result_count": 20,
+    "explainability": {
+     "signal.interests.entities": {
+      "effect_on_top3_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.28793067846714177
+       },
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.24814942497947565
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.24104305515562433
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.22287684139775824
+       }
+      ],
+      "effect_on_top5_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.2840959501088733
+       },
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.25015068266692275
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.2413377532028229
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.22441561402138105
+       }
+      ],
+      "effect_on_top10_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.2897238444023426
+       },
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.24246631615598546
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.2416896909107066
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.22612014853096532
+       }
+      ],
+      "effect_on_all_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.2883968361180083
+       },
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.24407913188269906
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.24057394304923507
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.22695008895005753
+       }
+      ]
+     }
+    },
+    "provenance": {
+     "source": "Qloo API",
+     "endpoint": "/v2/insights",
+     "documentation": "https://docs.qloo.com/reference/insights-api-deep-dive",
+     "requests": [
+      {
+       "method": "GET",
+       "path": "/v2/insights",
+       "query": {
+        "filter.type": "urn:entity:place",
+        "take": 20,
+        "signal.interests.entities": [
+         "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+        ],
+        "filter.location.query": "Vienna",
+        "feature.explainability": true
+       }
+      }
+     ],
+     "transport": "direct"
+    },
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "recommend",
+     "job": "recommend",
+     "signals": {
+      "entities": [
+       "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+      ]
+     },
+     "filters": {
+      "location": "Vienna"
+     },
+     "operators": {},
+     "output": {
+      "limit": 20,
+      "explain": true
+     },
+     "assumptions": [],
+     "unresolved": [],
+     "target": {
+      "type": "place"
+     }
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-1a60f8c8-7a8a-4a04-97cd-92d44517757d",
+     "duration_ms": 2368
+    }
+   }
+  },
+  {
+   "op": "recommend",
+   "input": {
+    "target_type": "place",
+    "signals": [
+     "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+     "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+    ],
+    "filter_location": "Vienna",
+    "explain": true,
+    "limit": 20
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "recommend",
+    "status": "ok",
+    "interpretation": {
+     "target_type": "urn:entity:place",
+     "signals": [
+      {
+       "input": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "entityId": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "name": "Taylor Swift",
+       "type": "urn:entity:person",
+       "match": "identifier"
+      },
+      {
+       "input": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "entityId": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "name": "Studio Ghibli",
+       "type": "urn:entity:artist",
+       "match": "identifier"
+      }
+     ],
+     "signal_tags": [],
+     "filter_location": "Vienna",
+     "include_tags": [],
+     "exclude_tags": []
+    },
+    "resolution": {
+     "contract_version": "1.0-preview.1",
+     "provider": {
+      "contract_version": "1.0-preview.1",
+      "provider_id": "qloo_api",
+      "name": "Qloo native resolution",
+      "entity_strategy": "exact_name_context_or_choice",
+      "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+      "remote": true,
+      "uses_model": false,
+      "fallback": "none"
+     },
+     "outcomes": [
+      {
+       "input": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "name": "Taylor Swift",
+        "type": "urn:entity:person",
+        "popularity": 0.9999836922842761,
+        "description": "American singer-songwriter (born 1989)"
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      },
+      {
+       "input": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "name": "Studio Ghibli",
+        "type": "urn:entity:artist",
+        "popularity": 0.7971195400980395,
+        "description": "A renowned Japanese animation studio known for its iconic animated films and music."
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [
+     {
+      "entity_id": "48FEEF7D-8684-441C-9BDF-00708B870974",
+      "name": "Wein Austria",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.8300797406932355,
+      "affinity": 0.7886981778217982,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5402677652681903
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.4597322347318098
+        }
+       ]
+      },
+      "properties": {
+       "description": "Specialty wine shop and webshop offering award-winning Austrian family-estate wines, with curated selection of regional vintages and direct sales from producers.",
+       "short_description": "Specialty wine shop and webshop offering award-winning Austrian family-estate wines, with curated selection of regional vintages and direct sales from producers.",
+       "image": {
+        "url": "https://images.qloo.com/i/48FEEF7D-8684-441C-9BDF-00708B870974-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Heiligenstadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kahlenberger Str. 55 1190 Wien Austria",
+       "price_level": null,
+       "business_rating": null
+      }
+     },
+     {
+      "entity_id": "344F0B64-441C-4FD1-A819-51809487325C",
+      "name": "Wien Museum Mozart apartment",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9903660746755044,
+      "affinity": 0.7708738663914979,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5106828854994301
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.4893171145005699
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic 18th-century apartment museum where Mozart lived and composed, featuring exhibits and intimate live-music concerts in the Bösendorfer Hall near Vienna's cathedral.",
+       "short_description": "Historic 18th-century apartment museum where Mozart lived and composed, featuring exhibits and intimate live-music concerts in the Bösendorfer Hall near Vienna's cathedral.",
+       "image": {
+        "url": "https://images.qloo.com/i/344F0B64-441C-4FD1-A819-51809487325C-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Mozarthaus Domgasse 5 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "76FFA421-95FF-4EBE-A126-A168687F8555",
+      "name": "Wiener Mozart Orchester - Wiener Mozart Konzerte",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.76480302930685,
+      "affinity": 0.7591121764925043,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.526862372048379
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.47313762795162095
+        }
+       ]
+      },
+      "properties": {
+       "description": "Period-costumed ensemble performing Mozart and Strauss repertoire in Vienna's historic concert halls for tourists.",
+       "short_description": "Period-costumed ensemble performing Mozart and Strauss repertoire in Vienna's historic concert halls for tourists.",
+       "image": {
+        "url": "https://images.qloo.com/i/76FFA421-95FF-4EBE-A126-A168687F8555-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kärntner Str. 51 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     },
+     {
+      "entity_id": "41A899B2-8A55-4F01-B6E5-A4DE45CDF6A5",
+      "name": "Naschmarkt",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9988982582748567,
+      "affinity": 0.7523586445896898,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5282159734774982
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.47178402652250184
+        }
+       ]
+      },
+      "properties": {
+       "description": "Large historic open-air food market offering international stalls, fresh produce, eateries and a popular weekend flea market in central Vienna.",
+       "short_description": "Large historic open-air food market offering international stalls, fresh produce, eateries and a popular weekend flea market in central Vienna.",
+       "image": {
+        "url": "https://images.qloo.com/i/41A899B2-8A55-4F01-B6E5-A4DE45CDF6A5-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Mariahilf",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Technical university Vienna Mariedlgasse 1060 Wien Austria",
+       "price_level": null,
+       "business_rating": 3.5999999046325684
+      }
+     },
+     {
+      "entity_id": "098764F2-F757-43E5-B827-859A2CC89C6E",
+      "name": "Moxy Vienna Airport",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9789433977402779,
+      "affinity": 0.7518014527990734,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.504004072885853
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.4959959271141469
+        }
+       ]
+      },
+      "properties": {
+       "description": "Modern, relaxed airport hotel with streamlined rooms, a casual restaurant/bar, and convenient access to Vienna International Airport.",
+       "short_description": "Modern, relaxed airport hotel with streamlined rooms, a casual restaurant/bar, and convenient access to Vienna International Airport.",
+       "image": {
+        "url": "https://images.qloo.com/i/098764F2-F757-43E5-B827-859A2CC89C6E-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Schwechat",
+        "name": null,
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Lower Austria",
+        "admin2_region": "Bezirk Bruck an der Leitha"
+       },
+       "address": "Ausfahrtsstraße 4 1300 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     },
+     {
+      "entity_id": "C6F96E24-1898-4D59-A119-9EE209263566",
+      "name": "Zum Goldenen Würstel I - Würstelstand",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.30894698973032586,
+      "affinity": 0.7488811038723283,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.5141020393945092
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.48589796060549084
+        }
+       ]
+      },
+      "properties": {
+       "description": "Casual fast-food spot in Vienna's city center offering late-night meals with beer and wine; dine-in, takeout and delivery.",
+       "short_description": "Casual fast-food spot in Vienna's city center offering late-night meals with beer and wine; dine-in, takeout and delivery.",
+       "image": {
+        "url": "https://images.qloo.com/i/C6F96E24-1898-4D59-A119-9EE209263566-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Spiegelgasse 1 1010 Wien Austria",
+       "price_level": 1,
+       "business_rating": 3.9000000953674316
+      }
+     },
+     {
+      "entity_id": "6B6E851A-EBE0-403F-B5F0-1262EB72FF00",
+      "name": "Kunst Haus Wien. Museum Hundertwasser",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.998653282324846,
+      "affinity": 0.742116942115889,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5008702048459949
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.4991297951540052
+        }
+       ]
+      },
+      "properties": {
+       "description": "Museum in a former factory showcasing Hundertwasser's paintings, architecture, and ecological design philosophy.",
+       "short_description": "Museum in a former factory showcasing Hundertwasser's paintings, architecture, and ecological design philosophy.",
+       "image": {
+        "url": "https://images.qloo.com/i/6B6E851A-EBE0-403F-B5F0-1262EB72FF00-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Landstraße",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Untere Weißgerberstraße 13 1030 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "E5CBD5F7-B29C-48F7-A488-CE71EF9C4FDE",
+      "name": "Sigmund Freud Museum",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9960703554584319,
+      "affinity": 0.7415383003064029,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.529382499951186
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.4706175000488139
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic house museum preserving Freud's former Vienna residence and practice, with exhibits on psychoanalysis, original rooms, archives, and a museum café.",
+       "short_description": "Historic house museum preserving Freud's former Vienna residence and practice, with exhibits on psychoanalysis, original rooms, archives, and a museum café.",
+       "image": {
+        "url": "https://images.qloo.com/i/E5CBD5F7-B29C-48F7-A488-CE71EF9C4FDE-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "KG Alsergrund",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Berggasse 19 1090 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "40E353D3-155C-4E16-9195-F42EB1A58748",
+      "name": "Café Mozart",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9974830067668338,
+      "affinity": 0.7378833892035142,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.5046778183034901
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.4953221816965099
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic Viennese coffeehouse behind the State Opera, famed for cakes, classic cuisine and literary ties to The Third Man.",
+       "short_description": "Historic Viennese coffeehouse behind the State Opera, famed for cakes, classic cuisine and literary ties to The Third Man.",
+       "image": {
+        "url": "https://images.qloo.com/i/40E353D3-155C-4E16-9195-F42EB1A58748-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Albertinapl. 2 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.099999904632568
+      }
+     },
+     {
+      "entity_id": "338294FE-58A9-4588-8F7E-842165532AE8",
+      "name": "Stephansplatz",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.992696967907222,
+      "affinity": 0.7376158010124347,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5466013928705993
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.4533986071294006
+        }
+       ]
+      },
+      "properties": {
+       "description": "Central Vienna subway interchange providing direct access to St. Stephen's Cathedral, nearby shopping, seasonal Christmas markets, and a busy tourist square.",
+       "short_description": "Central Vienna subway interchange providing direct access to St. Stephen's Cathedral, nearby shopping, seasonal Christmas markets, and a busy tourist square.",
+       "image": {
+        "url": "https://images.qloo.com/i/338294FE-58A9-4588-8F7E-842165532AE8-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "BCE2C5BF-0388-4227-8A83-22BBDBEEC854",
+      "name": "Café Landtmann",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9979874454933154,
+      "affinity": 0.7374798393483797,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5170981341026762
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.48290186589732387
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic, elegant Viennese coffeehouse and restaurant on the Ringstraße offering classic Austrian dishes, a shaded terrace, and a storied cultural clientele.",
+       "short_description": "Historic, elegant Viennese coffeehouse and restaurant on the Ringstraße offering classic Austrian dishes, a shaded terrace, and a storied cultural clientele.",
+       "image": {
+        "url": "https://images.qloo.com/i/BCE2C5BF-0388-4227-8A83-22BBDBEEC854-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Universitätsring 4 1010 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4.400000095367432
+      }
+     },
+     {
+      "entity_id": "32F6BEF3-1FFF-4932-83FA-84A8F0E50568",
+      "name": "Mayer am Pfarrplatz - Heuriger - Beethovenhaus - Weingut",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9319332744202391,
+      "affinity": 0.73655031677538,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5085681851765226
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.4914318148234774
+        }
+       ]
+      },
+      "properties": {
+       "description": "Traditional Viennese heuriger and winery offering seasonal Austrian meals, local wines, and a terrace beside the Beethoven House museum.",
+       "short_description": "Traditional Viennese heuriger and winery offering seasonal Austrian meals, local wines, and a terrace beside the Beethoven House museum.",
+       "image": {
+        "url": "https://images.qloo.com/i/32F6BEF3-1FFF-4932-83FA-84A8F0E50568-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Heiligenstadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Pfarrpl. 2 1190 Wien Austria",
+       "price_level": 3,
+       "business_rating": 4.300000190734863
+      }
+     },
+     {
+      "entity_id": "9FF56258-9190-4211-8FCD-2992C8FCFE9F",
+      "name": "Jugendstilhörsaal, Rektoratsgebäude (BT88), Medizinische Universität Wien",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.8265414261946339,
+      "affinity": 0.7358033508578626,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5469592628449743
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.45304073715502563
+        }
+       ]
+      },
+      "properties": {
+       "description": "Art Nouveau lecture hall in the historic rectorate building of the Medical University of Vienna, noted for its ornate Jugendstil interior and academic use.",
+       "short_description": "Art Nouveau lecture hall in the historic rectorate building of the Medical University of Vienna, noted for its ornate Jugendstil interior and academic use.",
+       "image": {
+        "url": "https://images.qloo.com/i/9FF56258-9190-4211-8FCD-2992C8FCFE9F-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "KG Alsergrund",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Spitalgasse 23 1090 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "62635B69-7785-40BD-8496-04D5B61EAF03",
+      "name": "Austrian Parliament",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9768424364464781,
+      "affinity": 0.7331964628941328,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5377106424757587
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.46228935752424133
+        }
+       ]
+      },
+      "properties": {
+       "description": "Imposing neoclassical seat of Austria's legislature offering guided tours of lavish chambers and an interactive visitor center showcasing parliamentary history and democracy.",
+       "short_description": "Imposing neoclassical seat of Austria's legislature offering guided tours of lavish chambers and an interactive visitor center showcasing parliamentary history and democracy.",
+       "image": {
+        "url": "https://images.qloo.com/i/62635B69-7785-40BD-8496-04D5B61EAF03-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Dr. Karl Renner-Ring 3 1017 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "E623030F-326F-42EB-9B20-ECD9263155EB",
+      "name": "Café Sperl",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9903946768713358,
+      "affinity": 0.7328798191488989,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5082355127696682
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.49176448723033184
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic 1880 Viennese coffeehouse serving traditional fare, homemade pastries, live piano music and a seasonal garden.",
+       "short_description": "Historic 1880 Viennese coffeehouse serving traditional fare, homemade pastries, live piano music and a seasonal garden.",
+       "image": {
+        "url": "https://images.qloo.com/i/E623030F-326F-42EB-9B20-ECD9263155EB-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Mariahilf",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Gumpendorfer Str. 11 1060 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "16843A81-9EA5-4039-9ADC-47248B7A1FCA",
+      "name": "Hotel Am Konzerthaus - MGallery Collection",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9825065998638238,
+      "affinity": 0.7325531072017419,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.5162827261098236
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.48371727389017644
+        }
+       ]
+      },
+      "properties": {
+       "description": "Modern hotel near Vienna's Konzerthaus with stylish rooms featuring Klimt art, 24/7 room service, chic restaurant, and pet-friendly accommodations.",
+       "short_description": "Modern hotel near Vienna's Konzerthaus with stylish rooms featuring Klimt art, 24/7 room service, chic restaurant, and pet-friendly accommodations.",
+       "image": {
+        "url": "https://images.qloo.com/i/16843A81-9EA5-4039-9ADC-47248B7A1FCA-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Landstraße",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Am Heumarkt 35/37 1030 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.5
+      }
+     },
+     {
+      "entity_id": "71B72353-F364-4423-BBC5-1487D43630E4",
+      "name": "Vienna State Opera",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9184595971696455,
+      "affinity": 0.7320424606062995,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.5009784033430158
+        },
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.49902159665698415
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic grand opera house on Vienna's Ringstraße, renowned for its rich acoustics, lavish architecture, and premier international opera and ballet productions.",
+       "short_description": "Historic grand opera house on Vienna's Ringstraße, renowned for its rich acoustics, lavish architecture, and premier international opera and ballet productions.",
+       "image": {
+        "url": "https://images.qloo.com/i/71B72353-F364-4423-BBC5-1487D43630E4-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Opernring 2 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "F6D270B9-DFA9-4411-A8E0-AC51CF7B2D4C",
+      "name": "Café Ristretto EKZ Galleria",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.47025705944910684,
+      "affinity": 0.7318673396732557,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.5447944771897473
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.4552055228102527
+        }
+       ]
+      },
+      "properties": {
+       "description": "Cozy café-restaurant on Landstraßer Hauptstraße offering coffee, quick bites, wine, beer and cocktails, plus dine-in, outdoor seating, delivery and drive-through.",
+       "short_description": "Cozy café-restaurant on Landstraßer Hauptstraße offering coffee, quick bites, wine, beer and cocktails, plus dine-in, outdoor seating, delivery and drive-through.",
+       "image": {
+        "url": "https://images.qloo.com/i/F6D270B9-DFA9-4411-A8E0-AC51CF7B2D4C-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Landstraße",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Landstraßer Hauptstraße 99 1030 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "354A217E-86F2-43E8-8310-D7A7FF065784",
+      "name": "boesner",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.3775736868713321,
+      "affinity": 0.7311569119223718,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.521216055135363
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.478783944864637
+        }
+       ]
+      },
+      "properties": {
+       "description": "Artist-oriented café inside an art-supply shop in Vienna serving coffee, beer, wine and seasonal Austrian dishes with outdoor seating.",
+       "short_description": "Artist-oriented café inside an art-supply shop in Vienna serving coffee, beer, wine and seasonal Austrian dishes with outdoor seating.",
+       "image": {
+        "url": "https://images.qloo.com/i/354A217E-86F2-43E8-8310-D7A7FF065784-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Simmering",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Unter der Kirche 4 1110 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4.800000190734863
+      }
+     },
+     {
+      "entity_id": "34466A7B-A295-456D-B130-455C2ACA0E96",
+      "name": "Museumsquartier",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9348300825266214,
+      "affinity": 0.7309068632622256,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "score": 0.523161319109369
+        },
+        {
+         "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+         "score": 0.47683868089063103
+        }
+       ]
+      },
+      "properties": {
+       "description": "Underground station serving Vienna's Museum Quarter with direct access to major museums and cultural institutions in the 1010 central district.",
+       "short_description": "Underground station serving Vienna's Museum Quarter with direct access to major museums and cultural institutions in the 1010 central district.",
+       "image": {
+        "url": "https://images.qloo.com/i/34466A7B-A295-456D-B130-455C2ACA0E96-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     }
+    ],
+    "result_count": 20,
+    "explainability": {
+     "signal.interests.entities": {
+      "effect_on_top3_recs": [
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.5259376742719999
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.4740623257280003
+       }
+      ],
+      "effect_on_top5_recs": [
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.520404984681529
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.47959501531847115
+       }
+      ],
+      "effect_on_top10_recs": [
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.5160099163377425
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.4839900836622575
+       }
+      ],
+      "effect_on_all_recs": [
+       {
+        "entity_id": "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+        "avg_score": 0.5175290811364333
+       },
+       {
+        "entity_id": "D1222FA1-A6FD-45DE-8993-D89E2BB4777A",
+        "avg_score": 0.48247091886356674
+       }
+      ]
+     }
+    },
+    "provenance": {
+     "source": "Qloo API",
+     "endpoint": "/v2/insights",
+     "documentation": "https://docs.qloo.com/reference/insights-api-deep-dive",
+     "requests": [
+      {
+       "method": "GET",
+       "path": "/v2/insights",
+       "query": {
+        "filter.type": "urn:entity:place",
+        "take": 20,
+        "signal.interests.entities": [
+         "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+         "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+        ],
+        "filter.location.query": "Vienna",
+        "feature.explainability": true
+       }
+      }
+     ],
+     "transport": "direct"
+    },
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "recommend",
+     "job": "recommend",
+     "signals": {
+      "entities": [
+       "3C9EEC3A-F4FE-48A4-B89F-97375F292448",
+       "D1222FA1-A6FD-45DE-8993-D89E2BB4777A"
+      ]
+     },
+     "filters": {
+      "location": "Vienna"
+     },
+     "operators": {},
+     "output": {
+      "limit": 20,
+      "explain": true
+     },
+     "assumptions": [],
+     "unresolved": [],
+     "target": {
+      "type": "place"
+     }
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-977b5b45-7605-47a5-9681-c5af8d31f0bc",
+     "duration_ms": 2404
+    }
+   }
+  },
+  {
+   "op": "recommend",
+   "input": {
+    "target_type": "place",
+    "signals": [
+     "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+     "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5"
+    ],
+    "filter_location": "Vienna",
+    "explain": true,
+    "limit": 20
+   },
+   "output": {
+    "schema_version": "1.0-preview.1",
+    "operation": "recommend",
+    "status": "ok",
+    "interpretation": {
+     "target_type": "urn:entity:place",
+     "signals": [
+      {
+       "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "entityId": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "name": "Radiohead",
+       "type": "urn:entity:artist",
+       "match": "identifier"
+      },
+      {
+       "input": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "entityId": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "name": "Wes Anderson",
+       "type": "urn:entity:author",
+       "match": "identifier"
+      }
+     ],
+     "signal_tags": [],
+     "filter_location": "Vienna",
+     "include_tags": [],
+     "exclude_tags": []
+    },
+    "resolution": {
+     "contract_version": "1.0-preview.1",
+     "provider": {
+      "contract_version": "1.0-preview.1",
+      "provider_id": "qloo_api",
+      "name": "Qloo native resolution",
+      "entity_strategy": "exact_name_context_or_choice",
+      "tag_strategy": "target_scoped_semantic_search_exact_name_or_choice",
+      "remote": true,
+      "uses_model": false,
+      "fallback": "none"
+     },
+     "outcomes": [
+      {
+       "input": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "name": "Radiohead",
+        "type": "urn:entity:artist",
+        "popularity": 0.9999966263060412,
+        "description": "Radiohead is an English rock band known for their innovative and experimental approach to music."
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      },
+      {
+       "input": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+       "status": "resolved",
+       "match": "identifier",
+       "selected": {
+        "id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "name": "Wes Anderson",
+        "type": "urn:entity:author",
+        "popularity": 0.9670742174439086
+       },
+       "provenance": {
+        "contract_version": "1.0-preview.1",
+        "provider_id": "qloo_api",
+        "provider_name": "Qloo native resolution",
+        "endpoint": "/entities",
+        "strategy": "identifier_lookup",
+        "remote": true,
+        "uses_model": false
+       }
+      }
+     ]
+    },
+    "results": [
+     {
+      "entity_id": "E5CBD5F7-B29C-48F7-A488-CE71EF9C4FDE",
+      "name": "Sigmund Freud Museum",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9960703554584319,
+      "affinity": 0.8536393749579959,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5531012591018563
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4468987408981437
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic house museum preserving Freud's former Vienna residence and practice, with exhibits on psychoanalysis, original rooms, archives, and a museum café.",
+       "short_description": "Historic house museum preserving Freud's former Vienna residence and practice, with exhibits on psychoanalysis, original rooms, archives, and a museum café.",
+       "image": {
+        "url": "https://images.qloo.com/i/E5CBD5F7-B29C-48F7-A488-CE71EF9C4FDE-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "KG Alsergrund",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Berggasse 19 1090 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "344F0B64-441C-4FD1-A819-51809487325C",
+      "name": "Wien Museum Mozart apartment",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9903660746755044,
+      "affinity": 0.8464928602007046,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5440460777754604
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.45595392222453945
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic 18th-century apartment museum where Mozart lived and composed, featuring exhibits and intimate live-music concerts in the Bösendorfer Hall near Vienna's cathedral.",
+       "short_description": "Historic 18th-century apartment museum where Mozart lived and composed, featuring exhibits and intimate live-music concerts in the Bösendorfer Hall near Vienna's cathedral.",
+       "image": {
+        "url": "https://images.qloo.com/i/344F0B64-441C-4FD1-A819-51809487325C-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Mozarthaus Domgasse 5 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "48FEEF7D-8684-441C-9BDF-00708B870974",
+      "name": "Wein Austria",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.8300797406932355,
+      "affinity": 0.8461316644564104,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5353805216219507
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.46461947837804923
+        }
+       ]
+      },
+      "properties": {
+       "description": "Specialty wine shop and webshop offering award-winning Austrian family-estate wines, with curated selection of regional vintages and direct sales from producers.",
+       "short_description": "Specialty wine shop and webshop offering award-winning Austrian family-estate wines, with curated selection of regional vintages and direct sales from producers.",
+       "image": {
+        "url": "https://images.qloo.com/i/48FEEF7D-8684-441C-9BDF-00708B870974-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Heiligenstadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kahlenberger Str. 55 1190 Wien Austria",
+       "price_level": null,
+       "business_rating": null
+      }
+     },
+     {
+      "entity_id": "D3E16295-C925-47D3-A78B-4E96E8CE1002",
+      "name": "Leopold Museum",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9994742024909169,
+      "affinity": 0.83467309342711,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5647754086083159
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4352245913916841
+        }
+       ]
+      },
+      "properties": {
+       "description": "Large museum in Vienna's MuseumsQuartier housing one of the world's largest Egon Schiele collections plus Klimt and Kokoschka, with a cafe and shop.",
+       "short_description": "Large museum in Vienna's MuseumsQuartier housing one of the world's largest Egon Schiele collections plus Klimt and Kokoschka, with a cafe and shop.",
+       "image": {
+        "url": "https://images.qloo.com/i/D3E16295-C925-47D3-A78B-4E96E8CE1002-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Neubau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Museumsplatz 1 1070 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "7AFEB5EF-D512-4201-A807-326E6E91921E",
+      "name": "mumok - Museum moderner Kunst Stiftung Ludwig Wien",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9977615995833737,
+      "affinity": 0.8305111717523237,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5583552856167432
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4416447143832567
+        }
+       ]
+      },
+      "properties": {
+       "description": "Bold, basalt-clad museum in Vienna's MuseumsQuartier showcasing modern and contemporary art, including Pop Art, photorealism, and multimedia works.",
+       "short_description": "Bold, basalt-clad museum in Vienna's MuseumsQuartier showcasing modern and contemporary art, including Pop Art, photorealism, and multimedia works.",
+       "image": {
+        "url": "https://images.qloo.com/i/7AFEB5EF-D512-4201-A807-326E6E91921E-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Neubau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Museumsplatz 1 1070 Wien Austria",
+       "price_level": null,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "41A899B2-8A55-4F01-B6E5-A4DE45CDF6A5",
+      "name": "Naschmarkt",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9988982582748567,
+      "affinity": 0.826633316532339,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.548682608251383
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.45131739174861707
+        }
+       ]
+      },
+      "properties": {
+       "description": "Large historic open-air food market offering international stalls, fresh produce, eateries and a popular weekend flea market in central Vienna.",
+       "short_description": "Large historic open-air food market offering international stalls, fresh produce, eateries and a popular weekend flea market in central Vienna.",
+       "image": {
+        "url": "https://images.qloo.com/i/41A899B2-8A55-4F01-B6E5-A4DE45CDF6A5-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Mariahilf",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Technical university Vienna Mariedlgasse 1060 Wien Austria",
+       "price_level": null,
+       "business_rating": 3.5999999046325684
+      }
+     },
+     {
+      "entity_id": "6B6E851A-EBE0-403F-B5F0-1262EB72FF00",
+      "name": "Kunst Haus Wien. Museum Hundertwasser",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.998653282324846,
+      "affinity": 0.8251793186813111,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5597176097881184
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.44028239021188165
+        }
+       ]
+      },
+      "properties": {
+       "description": "Museum in a former factory showcasing Hundertwasser's paintings, architecture, and ecological design philosophy.",
+       "short_description": "Museum in a former factory showcasing Hundertwasser's paintings, architecture, and ecological design philosophy.",
+       "image": {
+        "url": "https://images.qloo.com/i/6B6E851A-EBE0-403F-B5F0-1262EB72FF00-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Landstraße",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Untere Weißgerberstraße 13 1030 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "EDC3E184-C4B4-46AF-BD51-78C829D186E3",
+      "name": "Central European University Vienna",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9727422931011875,
+      "affinity": 0.8247530571039965,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5298909267794539
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4701090732205462
+        }
+       ]
+      },
+      "properties": {
+       "description": "International graduate research university in Vienna offering master's and doctoral programs in social sciences, humanities, law, and public policy.",
+       "short_description": "International graduate research university in Vienna offering master's and doctoral programs in social sciences, humanities, law, and public policy.",
+       "image": {
+        "url": "https://images.qloo.com/i/EDC3E184-C4B4-46AF-BD51-78C829D186E3-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Favoriten",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Quellenstraße 51 1100 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "76FFA421-95FF-4EBE-A126-A168687F8555",
+      "name": "Wiener Mozart Orchester - Wiener Mozart Konzerte",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.76480302930685,
+      "affinity": 0.8229525617098994,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5215391099526752
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4784608900473248
+        }
+       ]
+      },
+      "properties": {
+       "description": "Period-costumed ensemble performing Mozart and Strauss repertoire in Vienna's historic concert halls for tourists.",
+       "short_description": "Period-costumed ensemble performing Mozart and Strauss repertoire in Vienna's historic concert halls for tourists.",
+       "image": {
+        "url": "https://images.qloo.com/i/76FFA421-95FF-4EBE-A126-A168687F8555-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kärntner Str. 51 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     },
+     {
+      "entity_id": "97058E46-B345-401E-848D-4EC6E531CFFF",
+      "name": "Albertina",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9999286802389658,
+      "affinity": 0.8218861396504953,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5661213484253682
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4338786515746318
+        }
+       ]
+      },
+      "properties": {
+       "description": "19th-century Habsburg palace housing renowned old-master prints, modern art collections, and historic state rooms in central Vienna.",
+       "short_description": "19th-century Habsburg palace housing renowned old-master prints, modern art collections, and historic state rooms in central Vienna.",
+       "image": {
+        "url": "https://images.qloo.com/i/97058E46-B345-401E-848D-4EC6E531CFFF-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Albertinapl. 1 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.699999809265137
+      }
+     },
+     {
+      "entity_id": "7ABE62F9-B175-4192-AF3F-336758D8D646",
+      "name": "Secession",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9963684497721297,
+      "affinity": 0.8217883805332988,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5665064372006934
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4334935627993067
+        }
+       ]
+      },
+      "properties": {
+       "description": "Contemporary art museum housed in a gilded-laurel-domed Jugendstil building, famed for Klimt’s Beethoven Frieze and rotating exhibitions of leading contemporary artists.",
+       "short_description": "Contemporary art museum housed in a gilded-laurel-domed Jugendstil building, famed for Klimt’s Beethoven Frieze and rotating exhibitions of leading contemporary artists.",
+       "image": {
+        "url": "https://images.qloo.com/i/7ABE62F9-B175-4192-AF3F-336758D8D646-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Friedrichstraße 12 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     },
+     {
+      "entity_id": "8FF5B7C7-9673-4883-8102-E5BC9FF4A239",
+      "name": "Kunsthalle Wien Museumsquartier",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9667111300801864,
+      "affinity": 0.8197418497195867,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5594397574671774
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.44056024253282255
+        }
+       ]
+      },
+      "properties": {
+       "description": "Contemporary art center in Vienna's MuseumsQuartier presenting international exhibitions and analytical, research-driven programming.",
+       "short_description": "Contemporary art center in Vienna's MuseumsQuartier presenting international exhibitions and analytical, research-driven programming.",
+       "image": {
+        "url": "https://images.qloo.com/i/8FF5B7C7-9673-4883-8102-E5BC9FF4A239-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Neubau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Museumsplatz 1 1070 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.199999809265137
+      }
+     },
+     {
+      "entity_id": "0EA5CFCB-29D3-4378-AFB6-F1FFF8E7401A",
+      "name": "Karlsplatz",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.8964401781359614,
+      "affinity": 0.8195383916975866,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5351138864759359
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.464886113524064
+        }
+       ]
+      },
+      "properties": {
+       "description": "Central Viennese square and park anchored by the Baroque Karlskirche, with a reflecting pond, cultural venues, and busy metro interchange.",
+       "short_description": "Central Viennese square and park anchored by the Baroque Karlskirche, with a reflecting pond, cultural venues, and busy metro interchange.",
+       "image": {
+        "url": "https://images.qloo.com/i/0EA5CFCB-29D3-4378-AFB6-F1FFF8E7401A-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Wieden",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "1040 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.800000190734863
+      }
+     },
+     {
+      "entity_id": "065BAC4B-4EF4-4095-8DF7-BC022C71D97E",
+      "name": "St. Charles's Church",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.999311690014602,
+      "affinity": 0.8147307682488665,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.546753075756387
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4532469242436131
+        }
+       ]
+      },
+      "properties": {
+       "description": "18th-century Habsburg Baroque domed church with ornate frescoes and a 32.5-meter interior viewing platform.",
+       "short_description": "18th-century Habsburg Baroque domed church with ornate frescoes and a 32.5-meter interior viewing platform.",
+       "image": {
+        "url": "https://images.qloo.com/i/065BAC4B-4EF4-4095-8DF7-BC022C71D97E-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Wieden",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Karlskirche Karlsplatz 10 1040 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "667A5BED-F77C-4E22-8C07-78B4F7A48137",
+      "name": "State Hall of the Austrian National Library",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9652201013260646,
+      "affinity": 0.8136882632105913,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5360504171529374
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4639495828470625
+        }
+       ]
+      },
+      "properties": {
+       "description": "Baroque State Hall featuring ceiling frescoes housing Austria’s national library with rare manuscripts, papyrus collections and dedicated globe and map museums.",
+       "short_description": "Baroque State Hall featuring ceiling frescoes housing Austria’s national library with rare manuscripts, papyrus collections and dedicated globe and map museums.",
+       "image": {
+        "url": "https://images.qloo.com/i/667A5BED-F77C-4E22-8C07-78B4F7A48137-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Josefsplatz 1 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "62635B69-7785-40BD-8496-04D5B61EAF03",
+      "name": "Austrian Parliament",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9768424364464781,
+      "affinity": 0.8136086644037845,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5493377818822782
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4506622181177218
+        }
+       ]
+      },
+      "properties": {
+       "description": "Imposing neoclassical seat of Austria's legislature offering guided tours of lavish chambers and an interactive visitor center showcasing parliamentary history and democracy.",
+       "short_description": "Imposing neoclassical seat of Austria's legislature offering guided tours of lavish chambers and an interactive visitor center showcasing parliamentary history and democracy.",
+       "image": {
+        "url": "https://images.qloo.com/i/62635B69-7785-40BD-8496-04D5B61EAF03-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Dr. Karl Renner-Ring 3 1017 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.599999904632568
+      }
+     },
+     {
+      "entity_id": "9D3D47EE-507E-47C1-955E-0FF27452932B",
+      "name": "Hundertwasser House",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9997201070836496,
+      "affinity": 0.8130370686821011,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.573758116083286
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4262418839167141
+        }
+       ]
+      },
+      "properties": {
+       "description": "Brightly painted, organic apartment block with irregular windows, balconies and integrated trees on its forested roof.",
+       "short_description": "Brightly painted, organic apartment block with irregular windows, balconies and integrated trees on its forested roof.",
+       "image": {
+        "url": "https://images.qloo.com/i/9D3D47EE-507E-47C1-955E-0FF27452932B-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Landstraße",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Kegelgasse 36-38 1030 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.5
+      }
+     },
+     {
+      "entity_id": "D78EA91D-B175-4FF2-9B00-07D64E4EFADF",
+      "name": "Fahrschule Karlsplatz",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9312174766102758,
+      "affinity": 0.8121056054366055,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5435288959918466
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.4564711040081535
+        }
+       ]
+      },
+      "properties": {
+       "description": "Central Vienna driving school combining tradition since 1938 with modern vehicles, ISO-certified training, transparent pricing and flexible, free course scheduling.",
+       "short_description": "Central Vienna driving school combining tradition since 1938 with modern vehicles, ISO-certified training, transparent pricing and flexible, free course scheduling.",
+       "image": {
+        "url": "https://images.qloo.com/i/D78EA91D-B175-4FF2-9B00-07D64E4EFADF-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Innere Stadt",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Karlsplatz 2 1010 Wien Austria",
+       "price_level": null,
+       "business_rating": 4.5
+      }
+     },
+     {
+      "entity_id": "119BAB18-0CA3-49AF-84B7-9B8A6FB972AA",
+      "name": "Couch-Potato",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.29862271140644425,
+      "affinity": 0.8090195270474063,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.5056811178119668
+        },
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.49431888218803327
+        }
+       ]
+      },
+      "properties": {
+       "description": "Relaxed cocktail bar and restaurant near Handelskai in Vienna serving cocktails, beer, wine and comfort food with happy-hour specials, dine-in, takeout and delivery.",
+       "short_description": "Relaxed cocktail bar and restaurant near Handelskai in Vienna serving cocktails, beer, wine and comfort food with happy-hour specials, dine-in, takeout and delivery.",
+       "image": {
+        "url": "https://images.qloo.com/i/119BAB18-0CA3-49AF-84B7-9B8A6FB972AA-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Brigittenau",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Handelskai 94-96 1200 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4
+      }
+     },
+     {
+      "entity_id": "E623030F-326F-42EB-9B20-ECD9263155EB",
+      "name": "Café Sperl",
+      "type": "urn:entity",
+      "subtype": "urn:entity:place",
+      "popularity": 0.9903946768713358,
+      "affinity": 0.8079269194026696,
+      "explainability": {
+       "signal.interests.entities": [
+        {
+         "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "score": 0.5327408880268052
+        },
+        {
+         "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+         "score": 0.46725911197319486
+        }
+       ]
+      },
+      "properties": {
+       "description": "Historic 1880 Viennese coffeehouse serving traditional fare, homemade pastries, live piano music and a seasonal garden.",
+       "short_description": "Historic 1880 Viennese coffeehouse serving traditional fare, homemade pastries, live piano music and a seasonal garden.",
+       "image": {
+        "url": "https://images.qloo.com/i/E623030F-326F-42EB-9B20-ECD9263155EB-420x-auto.jpg"
+       },
+       "geocode": {
+        "city": "Vienna",
+        "name": "Mariahilf",
+        "metro": "Vienna",
+        "country": "Austria",
+        "country_code": "AT",
+        "admin1_region": "Vienna",
+        "admin2_region": "Wien"
+       },
+       "address": "Gumpendorfer Str. 11 1060 Wien Austria",
+       "price_level": 1,
+       "business_rating": 4
+      }
+     }
+    ],
+    "result_count": 20,
+    "explainability": {
+     "signal.interests.entities": {
+      "effect_on_top3_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.5441759528330892
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.45582404716691083
+       }
+      ],
+      "effect_on_top5_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.5511317105448653
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.4488682894551347
+       }
+      ],
+      "effect_on_top10_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.5481610155921326
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.45183898440786746
+       }
+      ],
+      "effect_on_all_recs": [
+       {
+        "entity_id": "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+        "avg_score": 0.5459579147073352
+       },
+       {
+        "entity_id": "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5",
+        "avg_score": 0.45404208529266477
+       }
+      ]
+     }
+    },
+    "provenance": {
+     "source": "Qloo API",
+     "endpoint": "/v2/insights",
+     "documentation": "https://docs.qloo.com/reference/insights-api-deep-dive",
+     "requests": [
+      {
+       "method": "GET",
+       "path": "/v2/insights",
+       "query": {
+        "filter.type": "urn:entity:place",
+        "take": 20,
+        "signal.interests.entities": [
+         "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+         "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5"
+        ],
+        "filter.location.query": "Vienna",
+        "feature.explainability": true
+       }
+      }
+     ],
+     "transport": "direct"
+    },
+    "query_intent": {
+     "schema_version": "1.0-preview.1",
+     "source_contract_version": "1.0.0",
+     "operation": "recommend",
+     "job": "recommend",
+     "signals": {
+      "entities": [
+       "70CAE5BF-2F4C-445C-A3E5-4EDACFC3591C",
+       "C71B6CCE-3F05-4A57-AA84-9D2C2B4D67C5"
+      ]
+     },
+     "filters": {
+      "location": "Vienna"
+     },
+     "operators": {},
+     "output": {
+      "limit": 20,
+      "explain": true
+     },
+     "assumptions": [],
+     "unresolved": [],
+     "target": {
+      "type": "place"
+     }
+    },
+    "execution": {
+     "transport": "direct",
+     "transport_name": "Qloo API",
+     "correlation_id": "exec-fbc7ba3a-2395-461a-95a9-cffc5326cd4c",
+     "duration_ms": 5387
+    }
+   }
+  }
+ ]
+}
