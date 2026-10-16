@@ -1,0 +1,17 @@
+{
+  "name": "taste-overlap",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "@qloo/qloo-harness": "0.1.26"
+  }
+}
