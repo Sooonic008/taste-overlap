@@ -33,10 +33,15 @@ $("f").addEventListener("submit", async (ev) => {
       const li = el("li");
       li.append(el("h3", "", p.name));
       if (p.address) li.append(el("div", "addr", p.address));
+      if (p.description) li.append(el("div", "addr", p.description));
       li.append(el("div", "why", p.why));
-      const bars = el("div", "bars");
-      bars.append(bar(p.scoreA, "var(--a)"), bar(p.scoreB, "var(--b)"));
-      li.append(bars);
+      if (p.basis === "combined") {
+        li.append(el("span", "tag", "combined taste - not in both personal top 20"));
+      } else {
+        const bars = el("div", "bars");
+        bars.append(bar(p.scoreA, "var(--a)"), bar(p.scoreB, "var(--b)"));
+        li.append(bars);
+      }
       for (const t of p.tags) li.append(el("span", "tag", t));
       $("picks").append(li);
     }
