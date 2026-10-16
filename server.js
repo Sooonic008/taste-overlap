@@ -46,8 +46,27 @@ async function body(req) {
   return JSON.parse(raw || "{}");
 }
 
+// Which proxy headers can be trusted is measured, not assumed: a caller sends the documentation address 203.0.113.77
+// in forged headers, /api/health reports only WHERE that marker arrived and how many X-Forwarded-For entries exist -
+// never a real address. It also reports the deployed commit, so a post-deploy smoke test can prove the new version runs.
+const MARKER = "203.0.113.77";
+function health(req) {
+  const proxy = ["x-forwarded-for", "cf-connecting-ip", "true-client-ip", "x-real-ip", "x-forwarded"];
+  return {
+    ok: true, commit: (process.env.RENDER_GIT_COMMIT || "local").slice(0, 7), transport: QLOO.name,
+    headers_present: proxy.filter((h) => req.headers[h] !== undefined),
+    xff_entries: String(req.headers["x-forwarded-for"] ?? "").split(",").filter((s) => s.trim()).length,
+    marker_in: proxy.filter((h) => String(req.headers[h] ?? "").split(",").map((s) => s.trim()).includes(MARKER)),
+    marker_last_in_xff: String(req.headers["x-forwarded-for"] ?? "").split(",").map((s) => s.trim()).filter(Boolean).at(-1) === MARKER,
+  };
+}
+
 const server = http.createServer(async (req, res) => {
   try {
+    if (req.method === "GET" && req.url.split("?")[0] === "/api/health") {
+      res.writeHead(200, { "content-type": "application/json", "cache-control": "no-store" });
+      return res.end(JSON.stringify(health(req)));
+    }
     if (req.method === "POST" && req.url === "/api/plan") {
       if (!DEMO && !allow(visitorOf(req))) throw Object.assign(new Error("too many plans - please try again in a few minutes"), { status: 429 });
       const result = await plan(await body(req), qlooClient());
