@@ -19,9 +19,30 @@ async function wake() {
   throw new Error(`page did not come up within ${limitS} s`);
 }
 
+// With EXPECT_COMMIT (CI: $CI_COMMIT_SHORT_SHA) the test first waits until /api/health reports that commit - otherwise
+// a still-running old instance would make the smoke test green although nothing new was deployed (review 16.10.).
+async function waitForCommit(expected) {
+  let seen = "";
+  while (Date.now() < deadline) {
+    try {
+      const h = await (await fetch(base + "/api/health", { signal: AbortSignal.timeout(Math.min(30_000, left())) })).json();
+      seen = h.commit;
+      if (expected.startsWith(h.commit) || h.commit.startsWith(expected)) return h;
+    } catch { /* waking up or deploying */ }
+    await new Promise((r) => setTimeout(r, 10_000));
+  }
+  throw new Error(`live commit is ${seen || "unknown"}, expected ${expected}`);
+}
+
 const t0 = Date.now();
 try {
   await wake();
+  const expected = (process.env.EXPECT_COMMIT || "").slice(0, 7);
+  if (expected) console.log(`live commit ${(await waitForCommit(expected)).commit} = expected ${expected}`);
+  const tools = await (await fetch(base + "/mcp", { method: "POST", signal: AbortSignal.timeout(left()),
+    headers: { "content-type": "application/json", accept: "application/json, text/event-stream" },
+    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "tools/list" }) })).json();
+  if (tools.result?.tools?.[0]?.name !== "plan_shared_evening") throw new Error("remote MCP /mcp does not list plan_shared_evening");
   const r = await fetch(base + "/api/plan", { method: "POST", signal: AbortSignal.timeout(left()),
     body: JSON.stringify({ city: "Paris", a: ["Beyoncé"], b: ["Harry Potter"] }) });
   const d = await r.json();
