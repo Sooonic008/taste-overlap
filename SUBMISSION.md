@@ -6,13 +6,14 @@ Two people plan an evening in a city. Each has different favourites: one likes R
 
 ## How Qloo is used (workflow)
 
-All calls go through the official event surface, `qloo exec` from `@qloo/qloo-harness` 0.1.26, against `https://hackathon.api.qloo.com`.
+All calls go through the official event surfaces of `@qloo/qloo-harness` 0.1.26 against `https://hackathon.api.qloo.com`. The hosted demo keeps one `qloo mcp` process (the harness's canonical MCP adapter) running for all requests; `qloo exec` is the alternative transport and was used for the recording.
 
 1. `entity_tags` once per favourite. Ambiguous names come back as `status: needs_input` with ranked candidates. The client takes the top candidate, retries once with its entity id, and keeps that choice visible in the response.
 2. `recommend` three times with `target_type: place`, `filter_location: <city>`, `explain: true`. The `signals` are A's entity ids, then B's, then both together.
 3. A pick survives only when it scores at least 0.2 for each person. Picks are ranked by the harmonic mean of A's and B's affinity, plus 15 % weight from the joint list. The harmonic mean drops picks that only one person would enjoy.
 4. Each reason is built from Qloo's per-result `explainability` (`signal.interests.entities`): which favourites drove the place, and by how much.
-5. The picks are ordered into an evening: something to do, then food, then a drink.
+5. Qloo returns at most 20 places per call, so two different tastes can share none of them. Measured case: Berlin, Daft Punk + Christopher Nolan vs Adele + Pixar. Then the plan is topped up from the joint list and each such pick is labelled "combined taste" instead of being shown as an overlap. A place that scored one-sided in both personal lists is never brought back this way.
+6. The picks are ordered into an evening: something to do, then food, then a drink.
 
 The result depends entirely on Qloo's per-person affinities. No language model chooses or ranks a place.
 
@@ -48,6 +49,10 @@ The full plan for A = Radiohead + Wes Anderson and B = Taylor Swift + Studio Ghi
 
 Each pick carries a reason, for example *"driven by Radiohead 29% · Taylor Swift 24% · Wes Anderson 24%; taste fit A 85% · B 77%"*.
 
+## Live demo
+
+https://taste-overlap.onrender.com (free Render instance: the first request after idle can take about a minute to wake up).
+
 ## Demo without credentials
 
 ```bash
@@ -64,12 +69,13 @@ export QLOO_API_KEY=...
 export QLOO_BASE_URL=https://hackathon.api.qloo.com
 export QLOO_TRUSTED_BASE_URL=https://hackathon.api.qloo.com
 npm start
-node --test   # 22 tests
+node --test   # 32 tests
 ```
 
 ## Limitations
 
 - **Ambiguous names:** the client takes Qloo's top-ranked candidate. For example, "Wes Anderson" resolved to the author entity rather than a film. The choice is returned so a UI can let the user correct it, but this version does not offer that correction yet.
 - **Places only:** the evening order is a keyword heuristic on Qloo's short description, not opening hours or distance.
-- **Speed:** a full plan took 12.8 s and 14.6 s in two live runs (4 name resolutions, 4 tag lookups, 3 recommendations, each through its own `qloo exec` process).
+- **Speed:** with `qloo exec` (a new process per call), a full plan took 12.8 s and 14.6 s locally and timed out on the free host. Over `qloo mcp` it took 2.9 s to 7.3 s locally once the process was running; the first plan after a start took 15.4 s.
+- **Overlap coverage:** when the two personal top-20 lists share fewer than six places, the remaining picks are Qloo's choices for the combined taste and are labelled that way.
 - **Demo coverage:** the credential-free demo covers exactly one recorded example.

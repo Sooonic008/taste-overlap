@@ -28,11 +28,12 @@ node --test
 
 ## How it works
 
-- `src/harness.js` (default) - Qloo workflows via `qloo exec`: `recommend` (`target_type: place`, the favourites as `signals`, `filter_location`: the city) for A, B and both; `entity_tags` for the tags that explain each pick. The harness resolves the names and validates input before calling Qloo; when a name is ambiguous (`status: needs_input`) the client takes Qloo's top-ranked candidate, retries once with its entity id and returns that choice. Workflow names are fixed, user text goes in on stdin.
+- `src/mcp.js` (default transport) - one long-running `qloo mcp` process (the harness's canonical MCP adapter) serves every workflow as `qloo_<op>`; on a small host this takes ~0.5-1.2 s per call instead of >30 s for a fresh `qloo exec`. `QLOO_TRANSPORT=exec` switches back to one `qloo exec` per call.
+- `src/harness.js` - the Qloo workflows: `recommend` (`target_type: place`, the favourites as `signals`, `filter_location`: the city) for A, B and both; `entity_tags` for the tags that explain each pick. The harness resolves the names and validates input before calling Qloo; when a name is ambiguous (`status: needs_input`) the client takes Qloo's top-ranked candidate, retries once with its entity id and returns that choice. Workflow names are fixed, user text goes in on stdin.
 - Each pick's reason comes from Qloo's per-result `explainability` (`signal.interests.entities`): which favourites drove the place and by how much.
 - `src/demo.js` - records and replays real harness envelopes for the credential-free demo.
 - `src/qloo.js` (fallback) - resolves each favourite with `/search`, ranks places with `/v2/insights` (`filter.type=urn:entity:place`, `signal.interests.entities`, `filter.location.query`). The key is sent as a header from the server and never reaches the browser.
-- `src/overlap.js` - pure logic: shared picks, reasons, evening order (unit-tested).
+- `src/overlap.js` - pure logic: shared picks, reasons, evening order (unit-tested). Qloo returns at most 20 places per call, and two tastes can share none of them (measured: Berlin, Daft Punk + Christopher Nolan vs Adele + Pixar). Real overlaps come first; the rest is topped up from the joint list and labelled "combined taste". A place scored one-sided in both personal lists never comes back that way.
 - `src/plan.js` - three Qloo calls (A, B, both) -> overlap -> explained plan.
 - `server.js` - dependency-free Node server, serves `public/` and `POST /api/plan`.
 

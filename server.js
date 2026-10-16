@@ -8,13 +8,17 @@ import { harnessClient } from "./src/harness.js";
 import { plan } from "./src/plan.js";
 import { replay } from "./src/demo.js";
 import { limiter } from "./src/limit.js";
+import { mcpRunner } from "./src/mcp.js";
 
-// Default: the official event surface (`qloo exec`). QLOO_TRANSPORT=rest uses the direct REST client instead;
-// QLOO_TRANSPORT=demo replays a recorded live run (no key needed, only the recorded example).
-const DEMO = process.env.QLOO_TRANSPORT === "demo"
+// Default: the harness's canonical MCP adapter (`qloo mcp`), one long-running process for all requests.
+// QLOO_TRANSPORT=exec spawns `qloo exec` per call; =rest uses the direct REST client; =demo replays a recorded live run
+// (no key needed, only the recorded example).
+const TRANSPORT = process.env.QLOO_TRANSPORT || "mcp";
+const DEMO = TRANSPORT === "demo"
   ? replay(JSON.parse(await readFile(new URL("./demo/vienna.json", import.meta.url), "utf8")).calls) : null;
-const qlooClient = () => (DEMO ? harnessClient({ run: DEMO })
-  : process.env.QLOO_TRANSPORT === "rest" ? client() : harnessClient());
+const MCP = TRANSPORT === "mcp" ? mcpRunner() : null;
+const qlooClient = () => (DEMO ? harnessClient({ run: DEMO }) : MCP ? harnessClient({ run: MCP })
+  : TRANSPORT === "rest" ? client() : harnessClient());
 
 // Each live plan costs 11 calls against the event quota.
 const allow = limiter();
