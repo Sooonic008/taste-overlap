@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taste Overlap</title>
+<meta name="description" content="Two people, a few favourites each. Qloo's taste graph finds the places you would both enjoy tonight.">
+<style>
+  :root { --bg:#faf7f2; --ink:#201c18; --muted:#6f675e; --line:#e7e0d6; --a:#3b5bdb; --b:#d9480f; --card:#fff; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:1040px; margin:0 auto; padding:28px 18px 48px; }
+  h1 { margin:0; font-size:30px; letter-spacing:-.01em; }
+  .sub { color:var(--muted); margin:4px 0 20px; }
+  form { display:grid; gap:14px; grid-template-columns:1fr 1fr; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  @media (max-width:760px) { form { grid-template-columns:1fr; } }
+  label { font-weight:600; font-size:14px; display:block; margin-bottom:6px; }
+  textarea, input { width:100%; font:inherit; padding:10px; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  textarea { min-height:110px; }
+  .a label { color:var(--a); } .b label { color:var(--b); }
+  .full { grid-column:1/-1; display:flex; gap:12px; align-items:end; flex-wrap:wrap; }
+  .full > div { flex:1; min-width:200px; }
+  button { font:inherit; font-weight:700; padding:11px 20px; border:0; border-radius:10px; background:var(--ink); color:#fff; cursor:pointer; }
+  button[disabled] { opacity:.5; cursor:wait; }
+  #status { color:var(--muted); margin:16px 0 8px; min-height:24px; }
+  .match { color:var(--muted); font-size:14px; margin-bottom:12px; }
+  ol { list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+  li { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  li h3 { margin:0 0 2px; font-size:18px; }
+  .addr { color:var(--muted); font-size:14px; }
+  .why { margin-top:8px; font-size:15px; }
+  .bars { display:flex; gap:6px; margin-top:8px; }
+  .bar { height:6px; border-radius:3px; }
+  .tag { display:inline-block; font-size:12px; padding:2px 8px; border:1px solid var(--line); border-radius:999px; margin:6px 4px 0 0; color:var(--muted); }
+  footer { color:var(--muted); font-size:13px; margin-top:28px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Taste Overlap</h1>
+  <p class="sub">Two people, a few favourites each. Qloo's taste graph finds the places you would <em>both</em> enjoy - and says why.</p>
+  <form id="f">
+    <div class="a"><label for="a">Person A - favourites (one per line)</label>
+      <textarea id="a" placeholder="Miles Davis&#10;Wes Anderson&#10;Ottolenghi"></textarea></div>
+    <div class="b"><label for="b">Person B - favourites (one per line)</label>
+      <textarea id="b" placeholder="Mad Men&#10;Daft Punk&#10;Monocle"></textarea></div>
+    <div class="full">
+      <div><label for="city">City</label><input id="city" placeholder="Vienna" value="Vienna"></div>
+      <button id="go" type="submit">Plan our evening</button>
+    </div>
+  </form>
+  <div id="status" aria-live="polite"></div>
+  <div id="match" class="match"></div>
+  <ol id="picks"></ol>
+  <footer>Recommendations: Qloo Taste AI. Your favourites are sent to the server only to ask Qloo; nothing is stored.</footer>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
