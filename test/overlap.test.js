@@ -59,3 +59,27 @@ test("evening uses the description when Qloo returns no tags", () => {
   const picks = [{ name: "Bar", tags: [], description: "Cocktail bar", score: 0.9 }, { name: "Museum", tags: [], description: "Art museum", score: 0.5 }];
   assert.deepEqual(evening(picks).map((p) => p.name), ["Museum", "Bar"]);
 });
+
+test("too few real overlaps are topped up from Qloo's joint list, clearly labelled, without duplicates", async () => {
+  const { fillFromJoint } = await import("../src/overlap.js");
+  const shared = [{ id: "s1", name: "Shared", tags: [], scoreA: 0.8, scoreB: 0.7, score: 0.7 }];
+  const joint = [{ id: "s1", name: "Shared", affinity: 0.9, tags: [] }, { id: "j1", name: "Joint One", affinity: 0.88, tags: [] },
+                 { id: "j2", name: "Joint Two", affinity: 0.87, tags: [] }];
+  const r = fillFromJoint(shared, joint, 3);
+  assert.deepEqual(r.map((p) => p.id), ["s1", "j1", "j2"]);
+  assert.equal(r[0].basis, "overlap");
+  assert.equal(r[1].basis, "combined");
+  assert.equal(fillFromJoint(shared, joint, 1).length, 1);
+});
+
+test("a combined pick explains itself without inventing per-person fit scores", () => {
+  const r = reason({ tags: [], basis: "combined", affinity: 0.88, drivers: [] }, [], []);
+  assert.match(r, /combined taste/);
+  assert.doesNotMatch(r, /taste fit A/);
+});
+
+test("a place measured as one-sided never returns through the joint list", async () => {
+  const { fillFromJoint } = await import("../src/overlap.js");
+  const joint = [{ id: "steak", name: "Steakhouse", affinity: 0.9, tags: [] }, { id: "j1", name: "Unscored", affinity: 0.8, tags: [] }];
+  assert.deepEqual(fillFromJoint([], joint, 6, new Set(["steak"])).map((p) => p.id), ["j1"]);
+});
