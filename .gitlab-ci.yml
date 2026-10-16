@@ -1,6 +1,7 @@
 # Taste Overlap - what happens after the code is written.
 # test -> deploy (Render deploy hook, only main) -> smoke (a real plan against the live URL) -> release notes.
-# Secrets are masked CI/CD variables, never in the repo: RENDER_DEPLOY_HOOK. The Qloo key lives only on Render.
+# Secrets never go into the repo. RENDER_DEPLOY_HOOK is a protected CI/CD variable (its URL contains '?key=', which GitLab
+# may refuse to mask) - so: protected, never echoed, and never run this pipeline with CI_DEBUG_TRACE. The Qloo key lives only on Render.
 
 stages: [test, deploy, verify, release]
 
@@ -35,9 +36,9 @@ deploy:
 smoke:
   stage: verify
   script:
-    # Render needs a moment to build and swap; then one real plan must return places with reasons.
-    - sleep 120
-    - node scripts/smoke.mjs "$LIVE_URL" 240 | tee smoke.txt
+    # Waits until /api/health reports this commit (proves the new version is live), then checks /mcp and one real plan.
+    - set -o pipefail
+    - EXPECT_COMMIT="$CI_COMMIT_SHORT_SHA" node scripts/smoke.mjs "$LIVE_URL" 600 | tee smoke.txt
   artifacts:
     paths: [smoke.txt]
     when: always

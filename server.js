@@ -7,6 +7,7 @@ import { plan } from "./src/plan.js";
 import { limiter } from "./src/limit.js";
 import { qlooTransport } from "./src/transport.js";
 import { mcpProtocol } from "./src/mcp-protocol.js";
+import { visitorOf as visitorFrom } from "./src/visitor.js";
 
 // How we talk to Qloo (default `qloo mcp`; exec / rest / demo) - shared with mcp-server.js.
 const QLOO = await qlooTransport();
@@ -14,13 +15,18 @@ const DEMO = QLOO.name === "demo";
 const qlooClient = QLOO.client;
 const MCP = mcpProtocol(qlooClient);
 
-// Each live plan costs 11 calls against the event quota.
-const allow = limiter();
-const visitorOf = (req) => String(req.headers["x-forwarded-for"] ?? "").split(",")[0].trim() || req.socket.remoteAddress;
+// Each live plan costs 11 calls against the event quota. Web and remote MCP have separate limits (review 16.10.): MCP calls
+// from claude.ai share a few Anthropic server addresses, so its per-address limit is wider, and each path has its own daily
+// ceiling so the connector can never starve the web demo. TO_LIMITS_IN_DEMO=1 turns the limits on in demo mode (tests).
+const allowWeb = limiter({ perWindow: 5, windowMs: 10 * 60_000, globalPerDay: 200 });
+const allowMcp = limiter({ perWindow: 20, windowMs: 10 * 60_000, globalPerDay: 150 });
+const LIMITS = !DEMO || process.env.TO_LIMITS_IN_DEMO === "1";
+const visitorOf = (req) => visitorFrom(req.headers, req.socket.remoteAddress);
 
 const ROOT = join(fileURLToPath(new URL(".", import.meta.url)), "public");
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml" };
-const PORT = Number(process.env.PORT) || 8787;
+// PORT=0 means "any free port" (tests); `Number(x) || 8787` threw the 0 away and the tests hit a foreign service on 8787.
+const PORT = /^\d+$/.test(process.env.PORT ?? "") ? Number(process.env.PORT) : 8787;
 
 async function rawBody(req) {
   let raw = "";
@@ -35,15 +41,8 @@ async function rawBody(req) {
 }
 
 async function body(req) {
-  let raw = "";
-  for await (const chunk of req) {
-    raw += chunk;
-    if (raw.length > 10_000) {
-      req.destroy();
-      throw Object.assign(new Error("request too large"), { status: 413 });
-    }
-  }
-  return JSON.parse(raw || "{}");
+  const raw = await rawBody(req);
+  try { return JSON.parse(raw || "{}"); } catch { throw Object.assign(new Error("request body must be JSON"), { status: 400 }); }
 }
 
 // Which proxy headers can be trusted is measured, not assumed: a caller sends the documentation address 203.0.113.77
@@ -68,8 +67,12 @@ const server = http.createServer(async (req, res) => {
       return res.end(JSON.stringify(health(req)));
     }
     if (req.method === "POST" && req.url === "/api/plan") {
-      if (!DEMO && !allow(visitorOf(req))) throw Object.assign(new Error("too many plans - please try again in a few minutes"), { status: 429 });
-      const result = await plan(await body(req), qlooClient());
+      if (LIMITS && !allowWeb(visitorOf(req))) throw Object.assign(new Error("too many plans - please try again in a few minutes"), { status: 429 });
+      let result;
+      try { result = await plan(await body(req), qlooClient()); } catch (e) {
+        if (e.input || e.status) throw e;            // only input errors are shown verbatim
+        throw Object.assign(new Error("Qloo did not answer - please try again in a minute"), { status: 502 });
+      }
       res.writeHead(200, { "content-type": "application/json" });
       return res.end(JSON.stringify(result));
     }
@@ -83,7 +86,7 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(400, { "content-type": "application/json" });
         return res.end(JSON.stringify({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "parse error" } }));
       }
-      if (msg?.method === "tools/call" && !DEMO && !allow(visitorOf(req))) {
+      if (msg?.method === "tools/call" && msg.id !== undefined && LIMITS && !allowMcp(visitorOf(req))) {
         res.writeHead(200, { "content-type": "application/json" });
         return res.end(JSON.stringify({ jsonrpc: "2.0", id: msg.id ?? null,
           result: { isError: true, content: [{ type: "text", text: "too many plans - please try again in a few minutes" }] } }));
@@ -106,4 +109,4 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => console.log(`Taste Overlap on http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`Taste Overlap on http://localhost:${server.address().port}`));
