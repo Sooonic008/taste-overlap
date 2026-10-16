@@ -22,6 +22,10 @@ Optional: `QLOO_TRANSPORT=rest` with `QLOO_API_KEY` uses the direct REST client 
 
 ## Use it from an agent (MCP tool)
 
+**Remote, nothing to install:** the live demo also speaks MCP at `https://taste-overlap.onrender.com/mcp` (streamable HTTP, JSON answers). In claude.ai or the Claude app: *Settings → Connectors → Add custom connector* and paste that URL. Tool calls share the demo's per-visitor and daily limits.
+
+**Local (stdio):**
+
 Taste Overlap is also an agent tool: `mcp-server.js` is a dependency-free MCP stdio server with one tool, `plan_shared_evening` (`city`, `person_a[]`, `person_b[]`). It returns the explained evening as text plus structured content, and any MCP client can call it:
 
 ```bash

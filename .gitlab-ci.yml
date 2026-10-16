@@ -1,0 +1,57 @@
+# Taste Overlap - what happens after the code is written.
+# test -> deploy (Render deploy hook, only main) -> smoke (a real plan against the live URL) -> release notes.
+# Secrets are masked CI/CD variables, never in the repo: RENDER_DEPLOY_HOOK. The Qloo key lives only on Render.
+
+stages: [test, deploy, verify, release]
+
+default:
+  image: node:22
+
+variables:
+  LIVE_URL: "https://taste-overlap.onrender.com"
+
+test:
+  stage: test
+  script:
+    - node --version
+    - node --test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH
+
+deploy:
+  stage: deploy
+  image: curlimages/curl:8.10.1
+  script:
+    - test -n "$RENDER_DEPLOY_HOOK" || (echo "RENDER_DEPLOY_HOOK is not set" && exit 1)
+    - curl --fail --silent --show-error -X POST "$RENDER_DEPLOY_HOOK" -o deploy.json
+    - echo "deploy triggered for $CI_COMMIT_SHORT_SHA"
+  artifacts:
+    paths: [deploy.json]
+    expire_in: 1 week
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+smoke:
+  stage: verify
+  script:
+    # Render needs a moment to build and swap; then one real plan must return places with reasons.
+    - sleep 120
+    - node scripts/smoke.mjs "$LIVE_URL" 240 | tee smoke.txt
+  artifacts:
+    paths: [smoke.txt]
+    when: always
+    expire_in: 1 month
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+release_notes:
+  stage: release
+  script:
+    - git log --format='- %s (%h)' -n 20 > RELEASE_NOTES.md
+    - cat RELEASE_NOTES.md
+  artifacts:
+    paths: [RELEASE_NOTES.md]
+    expire_in: 1 month
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
