@@ -57,3 +57,67 @@ test("unknown workflow names never reach the process", async () => {
   const run = mcpRunner({ spawnFn: fakeSpawn(() => ({ result: {} }), []) });
   await assert.rejects(run("capabilities; rm", {}), /unknown Qloo workflow/);
 });
+
+test("a process that dies mid-call fails that call and the next call starts a fresh process", async () => {
+  const starts = [];
+  let die = true;
+  const run = mcpRunner({ spawnFn: fakeSpawn(function () { return null; }, starts) });
+  // first call: the process exits before answering
+  const spawnDying = fakeSpawn(() => null, starts);
+  const run2 = mcpRunner({ spawnFn: () => { const c = spawnDying(); if (die) { die = false; setTimeout(() => c.emit("exit", 1), 20); } else {
+    c.stdin.removeAllListeners("data");
+    let buf = "";
+    c.stdin.on("data", (d) => { buf += d; let i; while ((i = buf.indexOf("\n")) >= 0) { const m = JSON.parse(buf.slice(0, i)); buf = buf.slice(i + 1);
+      if (m.id !== undefined) c.stdout.write(JSON.stringify({ jsonrpc: "2.0", id: m.id, result: m.method === "initialize" ? {} : { structuredContent: { status: "ok" } } }) + "\n"); } });
+  } return c; } });
+  await assert.rejects(run2("recommend", {}), /exited/);
+  assert.deepEqual(await run2("recommend", {}), { status: "ok" });
+  assert.equal(starts.length, 2);
+  void run;
+});
+
+test("a failed initialize does not poison the runner: the next call restarts", async () => {
+  const starts = [];
+  let first = true;
+  const run = mcpRunner({ spawnFn: () => {
+    starts.push(1);
+    const c = new EventEmitter();
+    c.stdout = new PassThrough(); c.stderr = new PassThrough(); c.stdin = new PassThrough();
+    const bad = first; first = false;
+    let buf = "";
+    c.stdin.on("data", (d) => { buf += d; let i; while ((i = buf.indexOf("\n")) >= 0) { const m = JSON.parse(buf.slice(0, i)); buf = buf.slice(i + 1);
+      if (m.id === undefined) continue;
+      const out = bad ? { error: { code: -32603, message: "init failed" } } : { result: m.method === "initialize" ? {} : { structuredContent: { status: "ok" } } };
+      c.stdout.write(JSON.stringify({ jsonrpc: "2.0", id: m.id, ...out }) + "\n"); } });
+    c.kill = () => c.emit("exit", 0);
+    return c;
+  } });
+  await assert.rejects(run("recommend", {}), /init failed/);
+  assert.deepEqual(await run("recommend", {}), { status: "ok" });
+  assert.equal(starts.length, 2);
+});
+
+test("concurrent calls each get their own answer", async () => {
+  const run = mcpRunner({ spawnFn: fakeSpawn((m) => ({ result: { structuredContent: { n: m.arguments?.limit ?? m.params?.arguments?.limit } } }), []) });
+  const r = await Promise.all([1, 2, 3].map((n) => run("recommend", { limit: n })));
+  assert.deepEqual(r.map((x) => x.n), [1, 2, 3]);
+});
+
+test("a timed-out call kills the stuck process so the next call gets a fresh one", async () => {
+  const starts = [];
+  const run = mcpRunner({ timeoutMs: 50, spawnFn: fakeSpawn((m) => (starts.length > 1 ? { result: { structuredContent: { status: "ok" } } } : null), starts) });
+  await assert.rejects(run("recommend", {}), /timed out/);
+  assert.deepEqual(await run("recommend", {}), { status: "ok" });
+  assert.equal(starts.length, 2);
+});
+
+test("a broken stdin pipe never crashes the server", async () => {
+  const run = mcpRunner({ spawnFn: () => {
+    const c = new EventEmitter();
+    c.stdout = new PassThrough(); c.stderr = new PassThrough(); c.stdin = new PassThrough();
+    c.stdin.on("data", () => c.stdin.emit("error", Object.assign(new Error("write EPIPE"), { code: "EPIPE" })));
+    c.kill = () => c.emit("exit", 0);
+    return c;
+  } });
+  await assert.rejects(run("recommend", {}), /EPIPE|exited/);
+});

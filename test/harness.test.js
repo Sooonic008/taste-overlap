@@ -70,3 +70,15 @@ test("resolve returns the Qloo entity id when the workflow reports one", async (
   assert.equal(e.id, "ID-RH");
   assert.deepEqual(e.tags, ["indie"]);
 });
+
+test("an album is not chosen as a taste signal when Qloo offers a non-album candidate", async () => {
+  const calls = [];
+  const q = harnessClient({ run: async (op, input) => {
+    calls.push(input);
+    if (calls.length === 1) return { status: "needs_input", resolution: { issues: [{ input: "Harry Potter", candidates: [
+      { id: "ALBUM", name: "Harry Potter", type: "urn:entity:album" }, { id: "SHOW", name: "Harry Potter", type: "urn:entity:tv_show" }] }] } };
+    return { status: "ok", results: [] };
+  } });
+  await q.places(["Harry Potter"], "Paris");
+  assert.deepEqual(calls[1].signals, ["SHOW"]);
+});
