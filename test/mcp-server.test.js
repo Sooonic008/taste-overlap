@@ -10,13 +10,14 @@ function session() {
   const child = spawn(process.execPath, [SERVER], { env: { ...process.env, QLOO_TRANSPORT: "demo", QLOO_API_KEY: "" } });
   let buf = "", id = 0;
   const waiting = new Map();
+  const orphans = [];
   child.stdout.on("data", (d) => {
     buf += d;
     let i;
     while ((i = buf.indexOf("\n")) >= 0) {
       const line = buf.slice(0, i); buf = buf.slice(i + 1);
-      let m;
-      try { m = JSON.parse(line); } catch { continue; }
+      const m = JSON.parse(line);              // any non-JSON line on stdout would break MCP clients - let it fail
+      if (m.id === null) { orphans.push(m); continue; }
       waiting.get(m.id)?.(m);
       waiting.delete(m.id);
     }
@@ -28,7 +29,12 @@ function session() {
     waiting.set(n, (m) => { clearTimeout(timer); resolve(m); });
     child.stdin.write(JSON.stringify({ jsonrpc: "2.0", id: n, method, params }) + "\n");
   });
-  return { rpc, close: () => child.kill() };
+  const raw = async (lines) => {
+    for (const l of lines) child.stdin.write(l + "\n");
+    for (let i = 0; i < 50 && orphans.length < lines.length; i++) await new Promise((r) => setTimeout(r, 40));
+    return orphans.splice(0);
+  };
+  return { rpc, raw, close: () => child.kill() };
 }
 
 const INIT = { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "t", version: "1" } };
@@ -57,7 +63,21 @@ test("bad input is a tool error the agent can read, not a crash", async () => {
     assert.equal(r.result.isError, true);
     assert.match(r.result.content[0].text, /required/);
     const u = await s.rpc("tools/call", { name: "nope", arguments: {} });
-    assert.ok(u.error || u.result?.isError);
+    assert.equal(u.error?.code, -32602);
     assert.equal((await s.rpc("ping", {})).result !== undefined, true);   // still alive
+  } finally { s.close(); }
+});
+
+test("malformed lines (null, arrays, garbage) get JSON-RPC errors and never kill the server", async () => {
+  const s = session();
+  try {
+    await s.rpc("initialize", INIT);
+    const r = await s.raw(["null", "[]", "42", "{not json"]);
+    assert.ok(r.length >= 4 && r.every((m) => m.error && m.id === null), JSON.stringify(r));
+    assert.deepEqual((await s.rpc("ping", {})).result, {});
+    const u = await s.rpc("tools/call", { name: "nope", arguments: {} });
+    assert.equal(u.error.code, -32602);
+    const m = await s.rpc("does/not/exist", {});
+    assert.equal(m.error.code, -32601);
   } finally { s.close(); }
 });
