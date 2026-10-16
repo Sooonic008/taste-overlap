@@ -47,12 +47,14 @@ function tagsOf(env) {
   return (Array.isArray(raw) ? raw : []).map((t) => (typeof t === "string" ? t : t?.name)).filter(Boolean);
 }
 
-/** Replace each ambiguous name in the input arrays by the id of Qloo's first (highest-ranked) candidate. */
+/** Replace each ambiguous name in the input arrays by the id of Qloo's top-ranked non-album candidate. */
 function chooseFirst(input, issues) {
   const choices = [];
   const next = { ...input };
   for (const issue of issues) {
-    const pick = issue?.candidates?.[0];
+    // Qloo ranks candidates; an album named like a film, show or book is rarely the taste the user means.
+    const cands = (issue?.candidates ?? []).filter((c) => c?.id);
+    const pick = cands.find((c) => c.type !== "urn:entity:album") ?? cands[0];
     if (!pick?.id) continue;
     for (const [key, value] of Object.entries(next)) {
       if (Array.isArray(value) && value.includes(issue.input)) next[key] = value.map((v) => (v === issue.input ? pick.id : v));
